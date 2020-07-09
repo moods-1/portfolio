@@ -58,7 +58,9 @@ mobileTimer = setInterval(()=>{
           <p>${divData[counter].description}</p>
         </div>
         <div class="git-link">
-          <img src="/images/github.svg" alt="" />
+          <a href=${divData[counter].gitLink} rel="noopener noreferrer" target="_blank">
+            <img src="/images/github.svg" alt="" />
+          </a>
         </div>
       </div>
       `;
@@ -89,7 +91,9 @@ screenTracker = ()=>{
                 <p>${box.description}</p>
               </div>
               <div class="git-link">
-                <img src="/images/github.svg" alt="" />
+                <a href=${box.gitLink} rel="noopener noreferrer" target="_blank">
+                  <img src="/images/github.svg" alt="" />
+                </a>
               </div>
             </div>
             `;
