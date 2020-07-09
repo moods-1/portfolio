@@ -126,7 +126,7 @@ form input::-ms-input-placeholder{ color: rgba(255, 255, 255, 0.692);}/* MS Edge
 
 /* Footer */
 
-footer { width: 100%;padding: 20px; position: relative; bottom: 0;
+footer { width: 100%;padding: 20px; position: absolute; bottom: 0;
   color: white; background: linear-gradient(rgb(96, 102, 105),rgb(65, 65, 65));
   text-align: center;}
 
