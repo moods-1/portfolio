@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content=" Affordable  and professional web design"
+    />
+    <title>Moods Web Design</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+  </head>
+  <body onresize="burgerCheck()">   
+    <div class="main-container">
+      <header>
+        <div id="logo">
+          <img src="/images/moodsLogoLiteBlue.png" alt="Moods-logo" />
+        </div>
+        <nav id="top-nav">
+          <ul class="nav-list">
+            <li class="top-nav-list-item"><a href="#about">About</a></li>
+            <li class="top-nav-list-item"><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div id="burger-box" class="d-none">
+          <img src="/images/burger.png" alt="burger" id="burger" />
+        </div>
+      </header>
+      <div class="d-none" id="vertical-nav">
+        <ul class="nav-list">
+          <li class="vertical-nav-list-item"><a href="#about">About</a></li>
+          <li class="vertical-nav-list-item"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Design Section -->
+      <div id="showcase">
+        <h1>DESIGNS</h1>
+        <div id="project-container">
+          <div class="design-box" id="design1">
+            <div class="image-container">
+              <a href="./weatherApp/weatherApp.html" rel="noopener noreferrer" target="_blank">
+                <img src="/images/weatherAppGray.png" alt="" class="projectSRC" />
+              </a>
+            </div>
+            <div class="description">
+              <p>Accuweather API, HTML5, CSS3, and JavaScript</p>
+            </div>
+            <div class="git-link">
+              <a href="https://github.com/moods-1/portfolio/tree/master/weatherApp" rel="noopener noreferrer" target="_blank">
+                <img src="/images/github.svg" alt="" />
+              </a>
+            </div>
+          </div>
+          
+          <!--    -->
+
+          <div class="design-box" id="design2">
+            <div class="image-container">
+              <a href="https://trusting-chandrasekhar-9da4df.netlify.app" rel="noopener noreferrer" target="_blank">
+                <img src="/images/pizzeriaApp.png" alt="" class="projectSRC" />
+              </a>
+            </div>
+            <div class="description">
+              <p>React, Node, and PayPal SDK</p>
+            </div>
+            <div class="git-link">
+              <a href="https://github.com/moods-1/pizzeria.git" rel="noopener noreferrer" target="_blank">
+                <img src="/images/github.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        
+          <!--    -->
+        
+          <div class="design-box" id="design3">
+            <div class="image-container">
+              <a href="./todoApp/todoApp.html" rel="noopener noreferrer" target="_blank">
+                <img src="/images/todoApp.png" alt="" class="projectSRC" />
+              </a>
+            </div>
+            <div class="description">
+              <p>HTML5, CSS3, and JavaScript</p>
+            </div>
+            <div class="git-link">
+              <a href="https://github.com/moods-1/portfolio/tree/master/todoApp" rel="noopener noreferrer" target="_blank">
+                <img src="/images/github.svg" alt="" />
+              </a>
+            </div>
+          </div>  
+        </div>
+      </div>
+
+      <!-- About and Skills -->
+
+      <div class="profile-container">
+        <div class="about" id="about">
+          <img src="/images/profile.jpg" alt="profile-pic" id="profile-picture" />
+        </div>
+        <div class="toolset-container">
+          <div class="profile">
+            <p id="profile-name">CARL MOODIE</p><br/>
+            <p id="about-me">I am a self-taught web developer with a desire to learn
+              new ways to bring the imagined to reality with code. 
+              Currently, I am improving my backend skills with the goal of becoming
+              a strong full-stack developer.
+            </p>
+          </div>
+          <div class="skills-box">
+            <div id="skills-head">
+              <p>SKILLS</p>
+            </div>
+            <div class="skills-container">
+              <div id="skills-titles">
+                <div class="title-container"><span>HTML5</span></div>
+                <div class="title-container"><span>CSS3</span></div>
+                <div class="title-container"><span>JAVASCRIPT ES6</span></div>
+                <div class="title-container"><span>SQL</span></div>
+                <div class="title-container"><span>REACT</span></div>
+                <div class="title-container"><span>PHOTOSHOP</span></div>
+              </div>
+              <div id="skills-progress">
+                <div class="progress-container">
+                  <div class="moods-progress-bar"><span>90%</span></div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar"><span>90%</span></div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar" id="js-progress">
+                    <span>80%</span>
+                  </div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar" id="sql-progress">
+                    <span>80%</span>
+                  </div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar" id="react-progress">
+                    <span>75%</span>
+                  </div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar" id="photoshop-progress">
+                    <span>75%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div id="contact">
+        <h1>CONTACT</h1>
+        <div id="form-container">
+          <form id="contact-form" method="post" action="contact.php">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+              maxlength="30"
+              required
+
+            /><br />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              maxlength="30"
+              placeholder="Your email"
+              required
+            /><br />
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Message ..."
+              cols="32"
+              rows="7"
+              required
+            ></textarea
+            ><br />
+            <button type="submit" id="submit-btn">SEND</button>
+          </form>
+        </div>
+      </div>      
+    </div>
+    <footer>
+      <p>Moods Web Design, Copyright &copy; 2020</p>
+    </footer>
+    <script src="/scripts/app.js"></script>
+  </body>
+</html>
