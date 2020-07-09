@@ -5,7 +5,7 @@ This is a collection of a few projects that demonstrate some of my programming s
   - Visual Studio Code
   - HTML5
   - CSS3
-  - Javascript ES6
+  - JavaScript ES6
   - React JS
   - Node (NPM)
   - Photoshop CC 2019
