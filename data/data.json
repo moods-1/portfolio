@@ -3,18 +3,21 @@
         "id": 1,
         "url": "./weatherApp/weatherApp.html",
         "image": "/images/weatherAppGray.png",
-        "description":"Accuweather API, HTML5, CSS3, and JavaScript"
+        "description":"Accuweather API, HTML5, CSS3, and JavaScript",
+        "gitLink":"https://github.com/moods-1/portfolio/tree/master/weatherApp"
     },
     {
         "id": 2,
         "url": "https://trusting-chandrasekhar-9da4df.netlify.app/",
         "image": "/images/pizzeriaApp.png",
-        "description":"React"
+        "description":"React",
+        "gitLink":"https://github.com/moods-1/pizzeria.git"
     },
     {
         "id": 3,
         "url": "./todoApp/todoApp.html",
         "image": "/images/todoApp.png",
-        "description":"HTML5, CSS3, and JavaScript"
+        "description":"HTML5, CSS3, and JavaScript",
+        "gitLink":"https://github.com/moods-1/portfolio/tree/master/todoApp"
     }
 ]
