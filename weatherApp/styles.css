@@ -1,0 +1,460 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  /*background: linear-gradient(rgb(68, 63, 63),gray) no-repeat fixed;*/
+  color: white;
+  min-height: 100%;
+  background: url("img/blueSkyClouds1.jpg");
+  /*background-position: center center;*/
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ }
+.cloud {
+  background: linear-gradient(
+    rgba(126, 124, 124, 0.815),
+    rgba(165, 163, 163, 0.993)
+  );
+}
+.sun {
+  background: linear-gradient(rgba(32, 61, 94, 0.561), rgb(50, 144, 231));
+}
+.main-container {
+  text-align: center;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  padding: 33px 10px 0 10px;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+#temp-switch {
+  position: absolute;
+  background: transparent;
+  color: white;
+  font-size: 1.4em;
+  border-style: hidden;
+  outline-style: none;
+  top: 40px;
+  left: 40px;
+  width: 25px;
+  height: 25px;
+  opacity: 0.8;
+  z-index: 2;
+  cursor: pointer;
+}
+#search {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 25px;
+  height: 25px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.moon{
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 70px;
+  z-index: 0;
+}
+.moon img{
+  width: 100%;
+  height: 100%;
+}
+.error-box{
+  position: absolute;
+  display: flex;
+  top: 90px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: auto;
+  padding: 10px;
+  background: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;;
+  text-overflow: clip;
+  color: red;
+  font-size: 20px;
+  z-index: 6;
+
+}
+form label {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+form input {
+  margin-top: 10px;
+  padding: 2px 10px 4px 10px;
+  width: 285px;
+  height: 32px;
+  font-size: 1.5em;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 3px 1px 5px rgba(77, 75, 75, 0.705);
+  outline: none;
+}
+.container {
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  border: solid 1px rgba(134, 132, 132, 0.37);
+  border-radius: 5px;
+  box-shadow: 3px 1px 10px rgba(128, 128, 128, 0.397);
+}
+.condition-icon {
+  width: 230px;
+  height: 150px;
+  margin: 30px 0 30px 0;
+}
+.details {
+  text-align: center;
+  /*text-transform: uppercase;*/
+}
+#city-day {
+  font-size: 1.3em;
+}
+#current-condition {
+  font-weight: bold;
+}
+#temperature {
+  font-size: 4em;
+}
+
+/* 12 Hour Forecast */
+
+.forecast-period-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.hours12-wrapper {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+}
+.hours12-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.hours12-container {
+  width: 100%;
+  display: flex;
+}
+.hours12-boxes {
+  display: grid;
+  grid-template-columns: 180px;
+  grid-template-rows: 50px 60px 90px 50px;
+  height: 260px;
+  border: solid 1px rgba(134, 132, 132, 0.157);
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 3px 1px 10px rgba(128, 128, 128, 0.74);
+  margin: 10px 3px 10px 0;
+  padding-bottom: 10px;
+}
+#hours12-time {
+  padding-top: 10px;
+  font-size: 1.3em;
+}
+#hours12-condition {
+  text-overflow: clip;
+}
+.hours12-boxes img {
+  width: 130px;
+  height: 80px;
+  margin: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#hours12-temp {
+  font-size: 2em;
+}
+
+/* 5 Day Forecast */
+
+.days5-container {
+  justify-content: center;
+  width: 100%;
+  min-height: 300px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.forecast-boxes {
+  padding: 10px 10px 0px 10px;
+  border: solid 1px rgba(134, 132, 132, 0.157);
+  text-align: center;
+  font-weight: 500;
+  border-radius: 5px;
+  box-shadow: 3px 1px 10px rgba(128, 128, 128, 0.74);
+  margin-right: 3px;
+  transform: perspective(400px) rotate(0deg);
+}
+.flex5 {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(auto-fit, 180px);
+  grid-template-rows: repeat(auto-fit, 300px);
+  grid-auto-rows: 300px;
+}
+.forecast-boxes img {
+  width: 120px;
+  height: 80px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#topDay {
+  padding-bottom: 5px;
+  font-size: 24px;
+}
+.d-none {
+  display: none;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1024px) {
+  header {
+    padding-top: 40px;
+  }
+  #temp-switch {
+    top: 15px;
+    left: 25px;
+    transform: scale(1.3);
+  }
+  #search {
+    top: 20px;
+    right: 25px;
+    transform: scale(1.3);
+  }
+  .moon{
+    top: 70px;
+    width: 200px;
+    height: 200px;
+  }
+  .container {
+    align-items: flex-start;
+    justify-content: center;
+    height: auto;
+  }
+  .details img {
+    transform: scale(0.9);
+    /*margin: 20px 0 10px 0;*/
+  }
+  #temperature {
+    font-size: 3.5em;
+  }
+  .days5-container {
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .flex5 {
+    grid-template-columns: repeat(auto-fit, 100%);
+    grid-template-rows: repeat(auto-fit, 100px);
+    grid-auto-rows: 100px;
+  }
+  .forecast-boxes {
+    transform: perspective(800px) rotateY(0deg);
+  }
+  .forecast-boxes #topDay {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .forecast-boxes img {
+    position: absolute;
+    left: 5%;
+    top: 0px;
+    width: 70px;
+    height: 50px;
+  }
+  .forecast-boxes #fiveDayDate {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .forecast-boxes #condition {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .forecast-boxes #min-temp {
+    position: absolute;
+    top: 50px;
+    left: 85%;
+  }
+  .forecast-boxes #max-temp {
+    position: absolute;
+    top: 35px;
+    left: 85%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .moon{
+    width: 120px;
+    height: 120px;
+  }
+  header {
+    padding-top: 40px;
+  }
+  header::before{
+    content: none;
+  }
+  header h1 {
+    display: none;
+  }
+  header form {
+    padding-top: 0px;
+    transform: scale(0.9);
+  }
+  .container {
+    align-items: flex-start;
+    justify-content: center;
+    height: auto;
+    border: none;
+    box-shadow: none;
+  }
+  .forecast-period-title {
+    font-size: 1.5em;
+    margin-bottom: 0px;
+  }
+  .hours12-wrapper {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  .forecast-boxes,
+  .hours12-boxes {
+    font-size: 80%;
+    padding: 5px;
+  }
+  .forecast-boxes img {
+    /*transform: scale(.8);*/
+    top: 0px;
+  }
+  .forecast-boxes #min-temp {
+    position: absolute;
+    top: 50px;
+    left: 70%;
+  }
+  .forecast-boxes #max-temp {
+    position: absolute;
+    top: 35px;
+    left: 70%;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .moon{
+    width: 90px;
+    height: 90px;
+  }
+  .error-box{
+    width: 300px;
+  }
+  header {
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0;
+  }
+  header h1 {
+    display: none;
+  }
+  #search, #temp-switch {
+    transform: scale(1);
+  }
+}
+@media only screen and (max-width: 400px) {
+  header {
+    padding: 0;
+  }
+  header form {
+    padding: 0px;
+  }
+  .container {
+    transform: scale(0.9);
+    align-items: flex-start;
+    justify-content: center;
+    width: auto;
+    height: auto;
+  }
+  .forecast-boxes {
+    font-size: 90%;
+    padding: 5px;
+  }
+  .forecast-boxes img {
+    transform: scale(0.8);
+    top: 0px;
+  }
+  .forecast-boxes #min-temp {
+    position: absolute;
+    top: 50px;
+    left: 70%;
+  }
+  .forecast-boxes #max-temp {
+    position: absolute;
+    top: 35px;
+    left: 70%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  header {
+    margin-top: 40px;
+  }
+  header form {
+    transform: scale(0.8);
+  }
+  .main-container {
+    margin: 0;
+    padding: 0 10px;
+  }
+  .moon{
+    width: 80px;
+    height: 80px;
+    top:55px;
+  }
+  .container {
+    transform: scale(0.9);
+    align-items: flex-start;
+    justify-content: center;
+    height: auto;
+  }
+  #condition-icon {
+    width: 190px;
+    height: 100px;
+  }
+}

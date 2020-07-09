@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="styles.css">
+        <title>Moods Weather</title>
+    </head>
+
+    <body>
+        <div class="main-container">
+            <img src="img/searcher1.png" id="search" class="">
+            <button type="button" id="temp-switch">&deg;F</button>
+            <div class="moon d-none">
+                <img src="img/moon.png" alt="moon">
+            </div>
+            <div class="error-box d-none"></div>
+
+            <header class="">
+                <h1 class="">The Weathernator</h1>
+                <form action="submit" class="change-location">
+                    <label for="City" name="formPrompt">Enter a city for information</label><br>
+                    <input type="text" name="city">
+                </form>
+            </header>
+            <!-- Current Conditions -->
+            <div class="container">
+                <div class="details"></div>
+            </div>
+            
+            <!-- 12 Hour Forecast -->
+
+            <p class="forecast-period-title d-none" id="hours12-title">12 Hour Forecast</p>
+            <div class="hours12-wrapper">
+                <div class="hours12-container d-none"></div>
+            </div>
+
+            <!-- 5 Day Forecast -->
+
+            <p class="forecast-period-title d-none" id="days5-title">5 Day Forecast</p>
+            <div class="days5-container flex5 d-none"></div>
+
+        </div>
+        <script src="scripts/forecast.js"></script>
+        <script src="scripts/dateFormatter.js"></script>
+        <script src="scripts/app.js"></script>
+    </body>
+</html>
