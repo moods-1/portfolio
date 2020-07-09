@@ -4,7 +4,7 @@ This was created to satisfy my curiousity about how other weather apps worked an
 
 ### Project Tools
   - Visual Studio Code
-  - Accuweather API
+  - Accuweather API (free version)
   - HTML5
   - CSS3
   - Javascript ES6
