@@ -1,0 +1,173 @@
+* { margin: 0; padding: 0; box-sizing: border-box; overflow-x: hidden;
+  color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+html{scroll-behavior: smooth;}
+body { width: 100vw; height: 100vh; min-width: 320px; margin: auto; padding: 0px; margin: 0px;
+   background: url('/images/griddy.png');overflow-x: hidden;}
+
+.main-container{
+  width: 100vw; 
+  min-height: calc(100vh - 65px);
+  overflow-x: hidden;
+}
+  /* Header */
+
+header { display: flex; justify-content: space-between; align-items: center;
+  background: linear-gradient(rgb(65, 65, 65), rgb(96, 102, 105));
+  width: 100vw; top: 0; height: auto; min-width: 320px; opacity: 0; z-index: 10;
+  animation-name: headerFade;
+  animation-duration: 1500ms;
+  animation-delay: 3500ms;
+  animation-fill-mode: forwards;}
+header img { width: auto; height: 60px;}
+h1{font-weight: 400; font-size: 2.5em;}
+#logo { margin-left: 5%;}
+#top-nav { margin-right: 5%;}
+ul { display: inline-flex; padding-right: 10px; list-style-type: none;}
+ul a{ color: white; text-decoration: none; text-transform: uppercase;
+  font-size: 1em; padding-right: 10px;}
+ul a:hover { color: rgb(218, 214, 214); opacity: 0.8;}
+#burger-box { width: 20px; height: 18px; cursor: pointer; margin-right: 5%;
+  overflow: hidden; transition: all 1s ease-in;} /* Slows the animation when triggered */
+#burger-box img{ width: 100%; height: 100%; margin-right: 20px;}
+.d-none { display: none;}
+
+/* Showcase */
+
+#showcase {
+  min-height: 400px; height: auto; width: 100%; padding: 10px 0 20px 0;
+  position: relative; text-align: center;}
+#showcase h1 { margin-bottom: 10px; opacity: 0; font-size: 2.5em;
+  animation: titleFade;
+  animation-duration: 1500ms;
+  animation-delay: 3500ms;
+  animation-fill-mode: forwards;}
+@keyframes headerFade
+{  from { opacity: 0;}
+    to { opacity: 1;}}
+@keyframes titleFade 
+{ from { opacity: 0;}
+  to {opacity: 1;}}
+#project-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  grid-template-rows: 360px;
+  grid-auto-rows: 360px;
+  justify-items: center;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  width: 65%;
+  top: -500px;
+  padding: 10px;
+  animation-name: startDrop;
+  animation-duration: 3500ms;
+  animation-fill-mode: forwards;
+}
+@keyframes startDrop
+{ from { top: -500px;}
+  to { top: 0px;}}
+.design-box { width: 200px; height: 360px; cursor: pointer; border-radius: 5px; overflow: hidden;}
+.design-box:hover { transform: scale(1.005); box-shadow: 3px 2px rgba(255, 255, 255, 0.418);}
+.image-container { width: 100%; height: 70%; overflow: hidden;}
+.image-container img { width: 100%; height: 100%;}
+.description{ height: 22%; padding: 10px 5px; font-size: 18px; display: flex;
+  align-items: center; justify-content: center; background: rgb(96, 102, 105);
+  border-top: solid 1px gray; overflow: inherit;}
+.git-link { height: 8%; border-top: solid 1px gray; background: rgb(96, 102, 105);
+  overflow: inherit;}
+.git-link img { height: 100%; width: 50%;}
+
+/* Skills */
+
+.profile-container { position: relative; color: white; background: rgb(96, 102, 105);}
+.about { margin: auto; padding-top: 20px; margin-bottom: 10px; 
+  text-align: center;  width: 100%;}
+.toolset-container { margin: auto; justify-content: center;
+  display: grid; gap: 5px; grid-template-columns: repeat(auto-fit, 320px);
+  width: 660px;  height: auto;}
+.profile { height: auto; width: 320px;  padding: 5px 10px; padding-bottom: 20px;
+  text-align: left;}
+#profile-picture { width: 100px;  height: 100px; border-radius: 50%;}
+#profile-name {font-size: 20px; position: relative}
+#about-me{ text-align: left; font-size: 18px;}
+.skills-box { height: 260px; width: 320px; padding: 5px 10px;}
+#skills-head { margin-bottom: 20px; }
+#skills-head p { font-size: 20px; text-align: left; position: relative;}
+.skills-container { width: auto; display: flex; justify-content: center; align-items: center;}
+.title-container {text-align: left; width: 100%; height: 20px; margin-bottom: 10px; overflow: hidden;}
+#skills-titles { width: 130px; height: auto;}
+#skills-titles span { text-align: left;}
+#skills-progress { width: 180px; height: auto;}
+.progress-container {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  background: white;
+  border: solid rgb(0, 183, 255) 1px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+.moods-progress-bar { position: relative; width: 90%; background: rgb(63, 169, 245);}
+.moods-progress-bar span { margin-left: 75px; font-size: 16px;}
+#js-progress, #sql-progress { position: relative; width: 80%; background: rgb(63, 169, 245);}
+#react-progress, #photoshop-progress { position: relative; width: 75%; background: rgb(63, 169, 245);}
+
+/* Contact */
+
+#contact { position: relative; width: 100%; height: auto; padding: 20px 15px;
+  text-align: center;}
+#form-container { width: 320px; margin: auto; justify-content: flex-start;}
+form input { width: 100%; margin-top: 20px; border: none; border-bottom: 1px solid white;
+  outline-style: none; color: white; background: none; font-size: 1.2em;}
+form input::placeholder{ color: rgba(255, 255, 255, 0.692);}
+form input::-ms-input-placeholder{ color: rgba(255, 255, 255, 0.692);}/* MS Edge */
+#message { width: 100%; margin-top: 20px; padding: 0 5px; color: black; font-size: 1.2em;
+ outline-style: none;}
+#submit-btn { width: 100%; margin-top: 10px; padding: 10px 0; font-size: 1.2em;
+  background: rgba(96, 102, 105, 0.747); border: none; outline-style: none;
+  cursor: pointer;}
+#submit-btn:hover { background: rgba(96, 102, 105);}
+
+/* Footer */
+
+footer { width: 100%;padding: 20px; color: white; height: 65px;
+  background: linear-gradient(rgb(96, 102, 105),rgb(65, 65, 65));
+  text-align: center;}
+
+/* Media Queries */
+@media(max-width: 1650px) { #project-container{ width: 70%;}}
+@media(max-width: 1350px) { #project-container{ width: 80%;}}
+@media (max-width: 1024px) {
+  #project-container{ width: 90%;}
+  .design-box { margin-bottom: 20px;}
+}
+@media (max-width: 768px) {
+  #project-container{ width: 100%;}
+  .design-box { min-width: 200px; margin: auto; margin-bottom: 0px;}
+  .about{margin-bottom: 5px;}
+  .toolset-container{ width: 360px; grid-template-columns: repeat(auto-fit, 100%);}
+  .profile, .skills-box{width: 100%;}
+  .profile img {float: none; margin-bottom: 10px;}  
+}
+@media(max-width: 669px){
+    #project-container { display: flex; height: 360px; min-width: 201px; width: auto; padding: 0; 
+    overflow-x: visible; -ms-overflow-style: none;}
+    #project-container::-webkit-scrollbar { display: none;} 
+  }
+@media (max-width: 415px) {
+    #top-nav { display: none; margin:0; padding:0;}
+    #logo { margin-left: 0; left: 50%; transform: scale(0.7);}
+    #vertical-nav{ position: relative; width: 100%; background: rgb(63, 169, 245);
+      border-bottom: solid 1px rgb(96, 102, 105); text-align: center;}
+    .nav-list{overflow: visible;}
+    ul { display: block; font: 1.5em bold; padding: 0 0 15px 0;
+      align-items: flex-end; transform: translateX(300px); width: 100%;}
+    @keyframes navEaseIn{ to{transform:translateX(-300px);}}
+    @keyframes navEaseOut{from{transform:translateX(-300px);}to{transform:translateX(300px);}}
+    
+    ul li { padding-top: 10px;}
+    ul li a { padding: 0;}
+    .toolset-container{ width: 320px;}
+    #form-container { width: 100%; margin: auto; justify-content: flex-start;}    
+}
