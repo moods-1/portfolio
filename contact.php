@@ -5,9 +5,9 @@
 
     $email_from = " ";
     $email_subject = "Interested in hiring!";
-    $email_body = "Sender: $name.\n".
-                    "Sender email: $visitor_email.\n".
-                        "Message: $message.\n";
+    $email_body = "Sender: $name\n".
+                    "Sender email: $visitor_email\n".
+                        "Message: $message\n";
     $to = "ceemoods@gmail.com";
     $headers = "From: $email_from \r\n";
     $headers .= "Reply-To: $visitor_email \r\n";
