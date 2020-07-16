@@ -125,6 +125,7 @@ form input {
   justify-content: center;
   width: 300px;
   height: auto;
+  padding: 15px;
   margin-bottom: 20px;
   border: solid 1px rgba(134, 132, 132, 0.37);
   border-radius: 5px;
@@ -138,6 +139,9 @@ form input {
 .details {
   text-align: center;
   /*text-transform: uppercase;*/
+}
+#city-country{
+  font-size: 1.3em;
 }
 #city-day {
   font-size: 1.3em;
