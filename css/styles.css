@@ -26,9 +26,9 @@ ul { display: inline-flex; padding-right: 10px; list-style-type: none;}
 ul a{ color: white; text-decoration: none; text-transform: uppercase;
   font-size: 1em; padding-right: 10px;}
 ul a:hover { color: rgb(218, 214, 214); opacity: 0.8;}
-#burger-box { width: 20px; height: 15px; cursor: pointer; margin-right: 5%;
+#burger-box { width: 20px; height: 16px; cursor: pointer; margin-right: 5%;
   overflow: hidden; transition: all 1s ease-in;} /* Slows the animation when triggered */
-#burger-box img{ width: 20px; height: 15px; margin-right: 20px;}
+#burger-box img{ width: 100%; height: 100%; margin-right: 20px;}
 .d-none { display: none;}
 
 /* Showcase */
