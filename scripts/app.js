@@ -1,258 +1,157 @@
-const tempSwitch = document.querySelector("#temp-switch");
-const magnifier = document.querySelector("#search");
-const cityForm = document.querySelector("form");
-const details = document.querySelector(".details");
-const currentContainer = document.querySelector(".container");
-const currentCondition = document.querySelector("img.condition-icon");
-const container12Hours = document.querySelector(".hours12-container");
-const hours12Array = document.getElementsByClassName("hours12-boxes");
-const container5Days = document.querySelector(".days5-container");
-const forecastBoxes = document.querySelector(".forecast-boxes");
-const forecastTitle = document.querySelectorAll(".forecast-period-title");
-const moon = document.querySelector('.moon');
-const errorBox = document.querySelector('.error-box');
-const forecast = new Forecast();
-const fahToCel = fah => Math.round((fah - 32) * (5 / 9));
-let data1 = [];
+const currentTitle = document.getElementsByTagName("title");
+const navListItems = Array.from(
+  document.querySelectorAll(".vertical-nav-list-item")
+);
+const projectImage = document.querySelectorAll(".image-container");
+const sendButton = document.getElementById("submit-btn");
+const burgerBox = document.querySelector('#burger-box');
+const food = document.querySelector("#burger-box");
+const foodImage = document.querySelector("#burger");
+const verticalNav = document.querySelector("#vertical-nav");
+const about = document.querySelector('.profile-container');
+const showcase = document.querySelector('#showcase');
+const contact = document.querySelector('#contact');
+const projectContainer = document.getElementById('project-container');
+const form = document.getElementById('contact-form');
+const clickSound = new Audio();
+let foodSource = "";
+let foodToggler = "";
+clickSound.src = "./audio/click.mp3";
+let counter = 0;
 
-// Time and date formatting
+// Done to prevent three design boxes coming down on page launch/refresh
 
-fullDay = dayNumber => {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  return days[dayNumber];
-};
-shortDay = dayNumber => {
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
-  return days[dayNumber];
-};
-shortMonth = monthNumber => {
-  let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
-    "Aug", "Sep", "Oct", "Nov", "Dec"];
-  return months[monthNumber];
-};
-hours12TrueGMT = hour => {
-  let tIndex = hour.indexOf("T");
-  let trueHour = hour.slice(tIndex + 1, tIndex + 3);
-  return parseInt(trueHour);
-};
-timeConversion = time => {
-  let d = new Date(time);
-  let month = this.shortMonth(d.getMonth());
-  let day = this.fullDay(d.getDay());
-  let dayShort = this.shortDay(d.getDay());
-  let date = d.getDate();
-  let currentHour = d.getHours();
-  let hours12Hour = this.hours12TrueGMT(time);
-  let minutes = d.getUTCMinutes();
-  let meridiem = "";
-  let meridiem12 = "";
-  if (currentHour == 0) {
-    currentHour = 12;
-    meridiem = "AM";
-  } else if (currentHour >= 13) {
-    currentHour = currentHour - 12;
-    meridiem = "PM";
-  } else {
-    meridiem = "AM";
-  }
-  if (hours12Hour == 0) {
-    hours12Hour = 12;
-    meridiem12 = "AM";
-  } else if (hours12Hour >= 13) {
-    hours12Hour = hours12Hour - 12;
-    meridiem12 = "PM";
-  } else {
-    meridiem12 = "AM";
-  }
-
-  return { month, day, dayShort, date, currentHour, hours12Hour, minutes, meridiem, meridiem12 };
-}  
-
-// UI population functions
-
-checkDayNight = weather =>{
-  if (weather.IsDayTime) {
-    moon.classList.add('d-none');
-    if (weather.WeatherText.toLowerCase().includes("sun")) {
-      document.body.style.background =
-      "linear-gradient(rgba(32, 61, 94, 0.849),rgb(50, 144, 231))no-repeat fixed";
-    } else {
-      document.body.style.background =
-      "linear-gradient(rgb(68, 63, 63),gray) no-repeat fixed";
-    }
-  } else {
-    document.body.style.background = "black";
-    moon.classList.remove('d-none');
-  }
+if(window.innerWidth < 670){
+  projectContainer.innerHTML =`
+  <div class="design-box" id="design1">
+          <div class="image-container">
+            <a href="./weatherApp/weatherApp.html" rel="noopener noreferrer" target="_blank">
+              <img src="/images/weatherAppGray.png" alt="" class="projectSRC" />
+            </a>
+          </div>
+          <div class="description">
+            <p>Accuweather API, HTML5, CSS3, and JavaScript</p>
+          </div>
+          <div class="git-link">
+            <img src="/images/github.svg" alt="" />
+          </div>
+        </div>
+  `;
 }
 
-fillCurrentConditions = (cityDetails, weather) =>{
-  const currentDayTime = timeConversion(weather.LocalObservationDateTime);
-  const { month, day, date } = currentDayTime;
-  details.innerHTML = `
-    <h1 id="city-name">${cityDetails.EnglishName}</h1>
-    <p id="city-country">${cityDetails.Country.EnglishName}</p>
-    <p id="city-day">${day} \xa0${month} ${date} </p>
-    <img src="img/icons/${weather.WeatherIcon}.png" class="condition-icon"> 
-    <div id="current-condition">${weather.WeatherText}</div>
-    <div id="temperature">
-            <span id="current-temp">${Math.round(weather.Temperature.Metric.Value)}</span>
-            <span id="current-temp-type">&deg;C</span>
-    </div>`;
-  cityForm.classList.toggle("d-none");
-}
+// Setup for dynamic designBox rendering
 
-fill12Hours = day12Hours =>{
-  container12Hours.innerHTML = "";
-  day12Hours.forEach((hour) => {
-    const hours12Forecast = timeConversion(hour.DateTime);
-    let { hours12Hour, meridiem12 } = hours12Forecast;
-    container12Hours.innerHTML += `
-      <div class="hours12-boxes" name="hours12-box">
-        <p id="hours12-time">${hours12Hour}:00 ${meridiem12}</p>
-        <p id="hours12-condition" class="">${hour.IconPhrase}</p>
-        <img src="img/icons/${hour.WeatherIcon}.png" alt="Condition">
-        <span id="hours12-temp">${Math.round(fahToCel(hour.Temperature.Value))}&deg;C</span>
-      </div>`;
-  });
-}
-
-fill5Days = (forecast5Days, weather) =>{
-  container5Days.innerHTML = "";
-  forecast5Days.forEach((day) => {
-    const fiveDayForecast = timeConversion(day.Date);
-    let { month, dayShort, date } = fiveDayForecast;
-    container5Days.innerHTML += `
-      <div class="forecast-boxes">
-        <p id="topDay">${dayShort}</p>
-        <p id="fiveDayDate">${month} ${date}</p>
-        <img src="img/icons/${day.Day.Icon}.png" alt="Condition"><br>
-        <p id="condition" class="d-none">${day.Day.IconPhrase}</p>
-        <span id="max-temp">Max: ${Math.round(fahToCel(day.Temperature.Maximum.Value))}&deg;C</span><br>
-        <span id="min-temp">Min: ${Math.round(fahToCel(day.Temperature.Minimum.Value))}&deg;C</span>
-      </div>`;
-    if (screen.width >= 1024) container5Days.classList.add('flex5');
-  });
-  if (!weather.IsDayTime){
-    let boxes = document.querySelectorAll('#condition');
-          console.log(boxes);
-          boxes.forEach(box =>{
-                  if(box.textContent.toLowerCase().includes('sun')){
-                          box.parentElement.classList.add('sun');
-                  }else{
-                          box.parentElement.classList.add('cloud');
-                  }
-          });
-  } 
-}
-
-tempScale = (weather, forecast5Days, day12Hours) => {
-  if (tempSwitch.innerHTML == "°C") {
-    document.getElementById("current-temp").innerHTML = `${Math.round(weather.Temperature.Imperial.Value)}`;
-    document.getElementById("current-temp-type").innerHTML = `&deg;F`;
-    document.querySelectorAll("#hours12-temp").forEach((temp, index) => {
-      temp.innerHTML = `${day12Hours[index].Temperature.Value}&deg;F`;
-    });
-    document.querySelectorAll("#max-temp").forEach((temp, index) => {
-      temp.innerHTML = `Max: ${forecast5Days[index].Temperature.Maximum.Value}&deg;F`;
-    });
-    document.querySelectorAll("#min-temp").forEach((temp, index) => {
-      temp.innerHTML = `Min: ${forecast5Days[index].Temperature.Minimum.Value}&deg;F`;
-    });
-  } else {
-    document.getElementById("current-temp").innerHTML = `${Math.round(weather.Temperature.Metric.Value)}`;
-    document.getElementById("current-temp-type").innerHTML = `&deg;C`;
-    document.querySelectorAll("#hours12-temp").forEach((temp, index) => {
-      temp.innerHTML = `${Math.round(fahToCel(day12Hours[index].Temperature.Value))}&deg;C`;
-    });
-    document.querySelectorAll("#max-temp").forEach((temp, index) => {
-      temp.innerHTML = `Max: ${Math.round(fahToCel(forecast5Days[index].Temperature.Maximum.Value))}&deg;C`;
-    });
-    document.querySelectorAll("#min-temp").forEach((temp, index) => {
-      temp.innerHTML = `Min: ${Math.round(fahToCel(forecast5Days[index].Temperature.Minimum.Value))}&deg;C`;
-    });
-  }
-};
-
-fetch("weatherNight.json")
+fetch('./data/data.json')
 .then(response => response.json())
-.then(data => {
-  console.log(data);
-  updateUI(data)})
-.catch((err => alert(err)));  
+.then(data => divData = data)
+.catch(err => alert(err));
 
-// UI updater
+mobileTimer = setInterval(()=>{
+  if(window.innerWidth < 670){
+    projectContainer.innerHTML =`
+      <div class="design-box" id="design${divData[counter].id}">
+        <div class="image-container">
+          <a href=${divData[counter].url} rel="noopener noreferrer" target="_blank">
+            <img src=${divData[counter].image} alt="" class="projectSRC" />
+          </a>
+        </div>
+        <div class="git-link">
+          <a href=${divData[counter].gitLink} rel="noopener noreferrer" target="_blank">
+            <img src="/images/github.svg" alt="" />
+          </a>
+        </div>
+        <div class="description">
+          <p>${divData[counter].description}</p>
+        </div>
+      </div>
+      `;
+  if(counter < divData.length) counter ++;
+  if(counter == divData.length) counter = 0;
+  }
+}, 3000);
 
-const updateUI = data => {
 
-  const { cityDetails, weather, forecast5Days, day12Hours } = data;
-  data1 = data;
-  
-  checkDayNight(weather);
-  fillCurrentConditions(cityDetails,weather);
-  fill12Hours(day12Hours);
-  fill5Days(forecast5Days,weather);
-  currentContainer.classList.remove("d-none");
-  container12Hours.classList.remove("d-none");
-  container5Days.classList.remove("d-none");
-  forecastTitle.forEach((title) => title.classList.remove("d-none")); // 12 hour and 5 day titles
-  tempScale(weather, forecast5Days, day12Hours);
-  localStorage.setItem("recentInfo", JSON.stringify(data));
-};
+// Required for when the setInterval is not actively altering the DOM 
+// when the screen size is greater than 659px. Only one designBox is
+// present in the projectContainer when the screen size goes back above
+// 659px.
 
-// Search box handler
+screenTracker = ()=>{
+    if(window.innerWidth > 669){
+      if(projectContainer.childElementCount < 2){
+        projectContainer.innerHTML = "";
+        divData.forEach(box =>{
+          projectContainer.innerHTML +=`
+            <div class="design-box" id="design${box.id}">
+              <div class="image-container">
+                <a href=${box.url} rel="noopener noreferrer" target="_blank">
+                  <img src=${box.image} alt="" class="projectSRC" />
+                </a>
+              </div>
+              <div class="git-link">
+                <a href=${box.gitLink} rel="noopener noreferrer" target="_blank">
+                  <img src="/images/github.svg" alt="" />
+                </a>
+              </div>
+              <div class="description">
+                <p>${box.description}</p>
+              </div>
+            </div>
+            `;
+          })
+        }       
+      }
+    }
 
-cityForm.addEventListener("submit", (e) => {
+if(window.innerWidth <= 414){
+  burgerBox.classList.remove('d-none');
+}
+
+burgerCheck =()=>{
+  screenTracker();
+  if(window.innerWidth <= 414){
+    burgerBox.classList.remove('d-none');
+  }
+  else{
+    burgerBox.classList.add('d-none');
+  }
+}
+
+burgerBox.addEventListener("click", () => {
+  if (foodToggler === 0) {
+      navListItems.reverse().forEach((link, index) => {
+      link.style.animation = `navEaseOut 0.5s ease-in-out forwards ${
+        index / 7
+      }s`;
+    });
+    foodSource = "/images/burger.png";
+    setTimeout(() => {
+      foodToggler = 1;
+      verticalNav.classList.add("d-none");
+    }, 700)
+  } else {
+    foodSource = "/images/fries.png";
+    foodToggler = 0;
+    verticalNav.classList.remove("d-none");
+    navListItems.forEach(
+      (link, index) =>
+        (link.style.animation = `navEaseIn 0.5s ease-in-out forwards ${
+          index / 7 + 0.2
+        }s`)
+    )
+  }
+  foodImage.setAttribute("src", foodSource);
+});
+
+// Page sounds
+
+projectImage.forEach(image => {
+  image.addEventListener("mouseover", () => clickSound.play());
+});
+
+sendButton.addEventListener("mouseover", () => clickSound.play());
+
+form.addEventListener("submit", e =>{
   e.preventDefault();
-  const city = cityForm.city.value.trim();
-  cityForm.reset();
-  forecast.updateCity(city)
-  .then(data => updateUI(data))
-  .catch(err =>{
-    errorBox.classList.remove("d-none");
-    errorBox.innerHTML = `
-      Sorry, no information for that location, or the daily limit of 50 API requests has been reached.`;
-    setTimeout(() =>{
-      errorBox.classList.add("d-none");
-    },5000);
-  });  
-  localStorage.setItem("city", city);
-});
-
-// Search box toggler
-
-magnifier.addEventListener("click", (e) => {
-  e.preventDefault();
-  cityForm.classList.toggle("d-none");
-});
-
-// Temperature scale changer
-
-tempSwitch.addEventListener("click", (e) => {
-  tempSwitch.innerHTML = tempSwitch.innerHTML == "°C" ? `&deg;F` : `&deg;C`;
-  let tempPreference = tempSwitch.innerHTML;
-  localStorage.setItem("tempPreference", tempPreference);
-  const { weather, forecast5Days, day12Hours} = data1;
-  tempScale( weather, forecast5Days, day12Hours);
-});
-
-if(localStorage.getItem("tempPreference")){
-  let scale = localStorage.getItem("tempPreference");
-  tempSwitch.innerHTML = scale;
-};
-
-// Get data for the last location queried
-
-if(localStorage.getItem('city')){
-  forecast.updateCity(localStorage.getItem('city'))
-  .then(data => updateUI(data))
-  .catch(err => console.log(err));
-};
+  window.location.href = "/contact.php";
+})
