@@ -2,13 +2,13 @@
   color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 html{scroll-behavior: smooth;}
 body { width: 100vw; height: 100vh; min-width: 320px; margin: auto; padding: 0px; margin: 0px;
-   background: url('/images/griddy.png');overflow-x: hidden;}
+  background: url('/images/griddy.png'); overflow-x: hidden;}
 
 .main-container{
   width: 100vw; 
   min-height: calc(100vh - 65px);
   overflow-x: hidden;
-}
+} 
   /* Header */
 
 header { display: flex; justify-content: space-between; align-items: center;
@@ -26,9 +26,9 @@ ul { display: inline-flex; padding-right: 10px; list-style-type: none;}
 ul a{ color: white; text-decoration: none; text-transform: uppercase;
   font-size: 1em; padding-right: 10px;}
 ul a:hover { color: rgb(218, 214, 214); opacity: 0.8;}
-#burger-box { width: 20px; height: 18px; cursor: pointer; margin-right: 5%;
+#burger-box { width: 20px; height: 15px; cursor: pointer; margin-right: 5%;
   overflow: hidden; transition: all 1s ease-in;} /* Slows the animation when triggered */
-#burger-box img{ width: 100%; height: 100%; margin-right: 20px;}
+#burger-box img{ width: 20px; height: 15px; margin-right: 20px;}
 .d-none { display: none;}
 
 /* Showcase */
@@ -67,7 +67,7 @@ ul a:hover { color: rgb(218, 214, 214); opacity: 0.8;}
 @keyframes startDrop
 { from { top: -500px;}
   to { top: 0px;}}
-.design-box { width: 200px; height: 360px; cursor: pointer; border-radius: 5px; overflow: hidden;}
+.design-box { width: 200px; height: 360px; border-radius: 5px; overflow: hidden;}
 .design-box:hover { transform: scale(1.005); box-shadow: 3px 2px rgba(255, 255, 255, 0.418);}
 .image-container { width: 100%; height: 70%; overflow: hidden;}
 .image-container img { width: 100%; height: 100%;}
