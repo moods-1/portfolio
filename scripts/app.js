@@ -103,20 +103,6 @@ screenTracker = ()=>{
       }
     }
 
-if(window.innerWidth <= 414){
-  burgerBox.classList.remove('d-none');
-}
-
-burgerCheck =()=>{
-  screenTracker();
-  if(window.innerWidth <= 414){
-    burgerBox.classList.remove('d-none');
-  }
-  else{
-    burgerBox.classList.add('d-none');
-  }
-}
-
 burgerBox.addEventListener("click", () => {
   if (foodToggler === 0) {
       navListItems.reverse().forEach((link, index) => {
