@@ -1,74 +1,34 @@
-const list = document.querySelector('.list');
+/*const list = document.querySelector('.list');*/
 const inputForm = document.querySelector('.adder');
 const modifierForm = document.querySelector('.modifier');
 const main = document.getElementsByClassName('main-container')[0];
-const listTheme = document.querySelector('.list-container');
-
-const clickSound = new Audio();
-clickSound.src = "./audio/click.mp3";
-
-main.setAttribute("id","darkTheme");
-listTheme.setAttribute("id","list-dark-theme");
+const listContainer = document.querySelector('.list-container');
+const showComplete = document.getElementById('complete-check');
+let list = [];
 
 // Populate the list
 
-htmlListFill = text =>{
+htmlListFill = (id,text) =>{
     let html = `
-        <div class="list-div">
-            <li class="list-item default-font-size"><span>${text}</span></li>
-            <img src="images/trashCan.png" class="trash_can" alt="trashCan">
+        <div class="list-div" id=${id}>
+            <input type="text" value='${text}' class="todo-item" />
+            <img src="images/redTrash.png" class="trash_can" alt="trashCan">
         </div>
         `;
-        list.innerHTML += html; 
+    listContainer.innerHTML += html; 
 }
 
-// Check the current theme
+// If a saved todo list exists in local storage, retrieve it and populate the DOM.
 
-checkTheme = () =>{
-    let currentTheme;
-    currentIDCheck = main.id;
-    if(currentIDCheck == "defaultTheme"){
-        currentTheme = true;
-    }else{
-        currentTheme = false;
-    }
-    return currentTheme;
-}
-
-// Colour the list item(s) background
-
-listBackground = () =>{
-    let theme = checkTheme();
-    let items = document.querySelectorAll('li');
-    items.forEach(item =>{
-        if(theme){
-            item.style.backgroundColor = "rgb(255,255,255)";
-        }else{
-            item.style.backgroundColor = "rgb(77, 77, 77)";
-        }
-    });  
-}
-
-// Load the text for the list items from the listItemNames.json file
-
-if(localStorage.getItem('savedTodoList')){
-    let list = JSON.parse(localStorage.getItem('savedTodoList'));
-    list.forEach(item =>{
-        htmlListFill(item);
-    })
-    listBackground();
-}
-else{
-    fetch('defaultList.json').then((response) =>{
-        return response.json();
-    }).then(data => {
-        data.forEach(item =>{
-        htmlListFill(item);
-        })
-        listBackground();
-    }).catch((err) => {
-    alert(err);
-    });
+try {
+    if(localStorage.getItem('savedTodoList')){
+        list = JSON.parse(localStorage.getItem('savedTodoList'));
+        list.forEach(item =>{
+            if(!item.isComplete) htmlListFill(item.id,item.todo); 
+        }) 
+    }         
+} catch (error) {
+    console.log(error)
 }
 
 // Add or save list items
@@ -77,45 +37,87 @@ inputForm.addEventListener('submit', e =>{
     e.preventDefault();
     let userInput = inputForm.user_input.value.trim();
     inputForm.reset();
-    console.log(userInput);
-    if(userInput.length){
-        htmlListFill(userInput);
-        listBackground();
-    }
+    list.push({
+        id:Date.now(),
+        todo: userInput,
+        isComplete: false
+    });
+    userInput.length && htmlListFill(Date.now(),userInput);
 });
 
 modifierForm.addEventListener('click', e =>{
     e.preventDefault();
-    if(e.target.classList.contains('save-btn')){
-        clickSound.play();
-        let listNames = [];
-        let listItems = Array.from(document.querySelectorAll('.list-item'));
-        listItems.forEach(item => listNames.push(item.textContent.trim()))
-        localStorage.setItem('savedTodoList',JSON.stringify(listNames));
+    
+    let confirmation = document.getElementById('save-confirmation');
+    
+    confirmationMessage = () =>{
+        confirmation.innerText = "List saved."
+            setTimeout(()=>{
+                confirmation.innerText = "";     
+            },1000);
     }
-    else if(e.target.classList.contains('dark-btn')){
-        clickSound.play();
-        listTheme.setAttribute("id","list-dark-theme");
-        main.setAttribute("id","darkTheme");
-        listBackground();
-    }    
-    else if(e.target.classList.contains('default-btn')){
-        clickSound.play();
-        listTheme.setAttribute("id","list-default-theme");
-        main.setAttribute("id","defaultTheme");
-        listBackground();
+    
+    if(e.target.classList.contains('save-btn')){
+        if(listContainer.innerText !== ""){
+            let listNames = [];
+            let listCombined = [];
+            let todo1 = "";
+            let listItems = Array.from(document.querySelectorAll('.todo-item'));
+            listItems.forEach((item,index) =>{
+                todo1 = item.value.trim();
+                listNames.push({
+                    id: Date.now() + index,
+                    todo: todo1,
+                    isComplete: false
+                })
+            }) 
+            if(list.length){
+                listCombined = [...list,...listNames];
+                listNames = [...new Set(listCombined)];
+            }else list = listNames;       
+            localStorage.setItem('savedTodoList',JSON.stringify(listNames));
+            confirmationMessage();
+        }
+        else if(listContainer.innerText === "" && list.length){
+            localStorage.setItem('savedTodoList',JSON.stringify(list));
+            confirmationMessage();
+        }       
+    }
+    else if(e.target.classList.contains('clear-btn')){
+        listContainer.innerHTML = "";
+        localStorage.removeItem('savedTodoList');
     }
  });
 
-// Delete items from the list
+// Mark todos as completed, and remove them from the DOM.
 
-list.addEventListener('click', e =>{
+listContainer.addEventListener('click', e =>{
     e.preventDefault();
     if(e.target.classList.contains('trash_can')){
+        tapp = list.map(x =>{
+            if(x.id === Number(e.target.parentElement.id)) x.isComplete = true;
+            return x;
+        });
+        localStorage.setItem('savedTodoList',JSON.stringify(tapp));
         e.target.parentElement.childNodes[1].classList.add('shrink');
-        setTimeout(function() {
-            e.target.parentElement.remove();    //your code to be executed after 1 second
+        setTimeout(()=> {
+            e.target.parentElement.remove();
         }, 400);
-        listBackground();
-    }   
+        list = [...tapp];
+        console.log(list);
+    }
 });
+
+showComplete.addEventListener('click', e =>{
+    listContainer.innerHTML = ""; 
+    if(list){
+        if(e.target.checked){
+            list.forEach(item => htmlListFill(item.id,item.todo)); 
+        }
+        else{
+            list.forEach(item =>{
+                if(!item.isComplete) htmlListFill(item.id,item.todo); 
+            }) 
+        }
+    }
+})
