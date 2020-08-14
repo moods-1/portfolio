@@ -1,9 +1,8 @@
-/*const list = document.querySelector('.list');*/
 const inputForm = document.querySelector('.adder');
 const modifierForm = document.querySelector('.modifier');
-const main = document.getElementsByClassName('main-container')[0];
 const listContainer = document.querySelector('.list-container');
 const showComplete = document.getElementById('complete-check');
+const confirmation = document.getElementById('save-confirmation');
 let list = [];
 
 // Populate the list
@@ -16,6 +15,13 @@ htmlListFill = (id,text) =>{
         </div>
         `;
     listContainer.innerHTML += html; 
+}
+
+confirmationMessage = () =>{
+    confirmation.innerText = "List saved."
+        setTimeout(()=>{
+            confirmation.innerText = "";     
+        },1000);
 }
 
 // If a saved todo list exists in local storage, retrieve it and populate the DOM.
@@ -47,41 +53,24 @@ inputForm.addEventListener('submit', e =>{
 
 modifierForm.addEventListener('click', e =>{
     e.preventDefault();
-    
-    let confirmation = document.getElementById('save-confirmation');
-    
-    confirmationMessage = () =>{
-        confirmation.innerText = "List saved."
-            setTimeout(()=>{
-                confirmation.innerText = "";     
-            },1000);
-    }
-    
     if(e.target.classList.contains('save-btn')){
-        if(listContainer.innerText !== ""){
-            let listNames = [];
-            let listCombined = [];
-            let todo1 = "";
-            let listItems = Array.from(document.querySelectorAll('.todo-item'));
-            listItems.forEach((item,index) =>{
+        let newList = list;
+        if(listContainer.innerHTML){
+            let todo1;
+            let listItems = document.querySelectorAll('.todo-item');
+            listItems.forEach(item =>{
                 todo1 = item.value.trim();
-                listNames.push({
-                    id: Date.now() + index,
-                    todo: todo1,
-                    isComplete: false
-                })
+                newList = list.map(x=> {
+                    if(Number(item.parentElement.id) === x.id) x.todo = todo1;
+                    return x;
+                });                        
             }) 
-            if(list.length){
-                listCombined = [...list,...listNames];
-                listNames = [...new Set(listCombined)];
-            }else list = listNames;       
-            localStorage.setItem('savedTodoList',JSON.stringify(listNames));
-            confirmationMessage();
-        }
-        else if(listContainer.innerText === "" && list.length){
+            list = newList;
             localStorage.setItem('savedTodoList',JSON.stringify(list));
             confirmationMessage();
-        }       
+        }
+        else if(!listContainer.innerHTML && list.length) localStorage.setItem('savedTodoList',JSON.stringify(list)); 
+        else  localStorage.setItem('savedTodoList',JSON.stringify(list));     
     }
     else if(e.target.classList.contains('clear-btn')){
         listContainer.innerHTML = "";
@@ -104,7 +93,6 @@ listContainer.addEventListener('click', e =>{
             e.target.parentElement.remove();
         }, 400);
         list = [...tapp];
-        console.log(list);
     }
 });
 
