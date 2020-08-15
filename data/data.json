@@ -10,7 +10,7 @@
         "id": 2,
         "url": "https://trusting-chandrasekhar-9da4df.netlify.app/",
         "image": "/images/pizzeriaApp.png",
-        "description":"React",
+        "description":"React, Context API, Node, and PayPal SDK",
         "gitLink":"https://github.com/moods-1/pizzeria.git"
     },
     {
