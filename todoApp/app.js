@@ -74,6 +74,7 @@ modifierForm.addEventListener('click', e =>{
     }
     else if(e.target.classList.contains('clear-btn')){
         listContainer.innerHTML = "";
+        list = [];
         localStorage.removeItem('savedTodoList');
     }
  });
