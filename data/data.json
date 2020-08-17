@@ -2,7 +2,7 @@
     {
         "id": 1,
         "url": "./weatherApp/weatherApp.html",
-        "image": "/images/weatherAppGray.png",
+        "image": "/images/weatherApp.png",
         "description":"Accuweather API, HTML5, CSS3, and JavaScript",
         "gitLink":"https://github.com/moods-1/portfolio/tree/master/weatherApp"
     },
