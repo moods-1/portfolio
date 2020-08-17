@@ -1,8 +1,8 @@
 // API Interaction
 class Forecast {
     constructor() {
-        //this.key = 'GRM14XNEjtHzTjsKOMATpE6USlFICu5O';
-        this.key = 'slOdXF6hDYlBwdAXABY8k4PgzS1PDe9Y';
+        this.key = 'GRM14XNEjtHzTjsKOMATpE6USlFICu5O';
+        //this.key = 'slOdXF6hDYlBwdAXABY8k4PgzS1PDe9Y';
         this.weatherURI = 'http://dataservice.accuweather.com/currentconditions/v1/';
         this.cityURI = 'http://dataservice.accuweather.com/locations/v1/cities/search';
         this.days5URI = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/';

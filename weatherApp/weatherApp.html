@@ -8,42 +8,46 @@
         <title>Moods Weather</title>
     </head>
 
-    <body>
+    <body onresize="windowCheck()">
         <div class="main-container">
-            <img src="img/searcher1.png" id="search" class="">
-            <button type="button" id="temp-switch">&deg;F</button>
+            <img src="img/launchIcon.png" alt="sun-cloud" id="launch-icon">
             <div class="moon d-none">
                 <img src="img/moon.png" alt="moon">
             </div>
             <div class="error-box d-none"></div>
-
-            <header class="">
-                <h1 class="">The Weathernator</h1>
-                <form action="submit" class="change-location">
-                    <label for="City" name="formPrompt">Enter a city for information</label><br>
-                    <input type="text" name="city">
-                </form>
-            </header>
-            <!-- Current Conditions -->
-            <div class="container d-none">
+            <h1 id="title" class="d-none">Weathernator</h1>
+            <div class="container">
+                <div class="temp-search-box">
+                    <button type="button" id="temp-switch" class="d-none">&deg;F</button>
+                    <img src="img/searcher.png" id="search" class="">  
+                </div>
+                
+                <header>
+                    <form action="submit" class="change-location">
+                        <label for="City" name="formPrompt">City search</label><br>
+                        <input type="text" name="city">
+                    </form>
+                </header>
+                
                 <div class="details"></div>
+                                              
+                <div id="forecast-div" class="d-none">
+                    <div id="forecast-buttons">
+                        <button class="forecast-btn d-none" id="hours12-btn">12-Hours</button>
+                        <button class="forecast-btn">Show Forecast</button>
+                        <button class="forecast-btn d-none" id="days5-btn">5-Days</button>
+                    </div>
+                    <div id="forecast-box" class="d-none">
+                        <div id="forecast-title"></div>
+                        <div class="days5-container d-none"></div>
+                        <div class="hours12-container d-none"></div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- 12 Hour Forecast -->
-
-            <p class="forecast-period-title d-none" id="hours12-title">12 Hour Forecast</p>
-            <div class="hours12-wrapper">
-                <div class="hours12-container d-none"></div>
-            </div>
-
-            <!-- 5 Day Forecast -->
-
-            <p class="forecast-period-title d-none" id="days5-title">5 Day Forecast</p>
-            <div class="days5-container flex5 d-none"></div>
-
         </div>
-        <script src="scripts/forecast.js"></script>
         <script src="scripts/dateFormatter.js"></script>
+        <script src="scripts/uiFunctions.js"></script>
+        <script src="scripts/forecast.js"></script>
         <script src="scripts/app.js"></script>
     </body>
 </html>
