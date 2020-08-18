@@ -1,7 +1,6 @@
 checkDayNight = weather => {
     let bodyBack = document.body;
     if (weather.IsDayTime) {
-      night = false;
       let sunColour = "linear-gradient(rgb(32, 61, 94),rgb(50, 144, 231))no-repeat fixed";
       let cloudColour = "linear-gradient(rgb(68, 63, 63),gray) no-repeat fixed";
       bodyBack.style.background = weather.WeatherText.toLowerCase().includes("sun") ? 
@@ -9,13 +8,8 @@ checkDayNight = weather => {
     }
     else {
       bodyBack.style.background = "black";
-      night = true;
       window.innerWidth > 768 ? moon.classList.remove('d-none') : moon.classList.add('d-none');
     }
-  }
-  
-  windowCheck = _ => {
-    if (night) window.innerWidth > 768 ? moon.classList.remove('d-none') : moon.classList.add('d-none');
   }
   
   // Current condition populater
@@ -82,8 +76,7 @@ checkDayNight = weather => {
             <img src="img/icons/${day.Day.Icon}.png" alt="Condition">
           </div>
           <div class="forecast-date">
-            <p id="fiveDayDate">${month} ${date}</p>
-            <p id="condition${index}" class="d-none">${day.Day.IconPhrase}</p>
+            <p id="fiveDayDate">${dayShort} , ${month} ${date}</p>  
           </div>
           <div class="forecast-temps">
             <span id="max-temp">Max: ${Math.round(fahToCel(day.Temperature.Maximum.Value))}&deg;C</span><br>
