@@ -7,12 +7,11 @@ const container12Hours = document.querySelector(".hours12-container");
 const container5Days = document.querySelector(".days5-container");
 const forecastBox = document.getElementById("forecast-box");
 const forecastButton = document.getElementById("forecast-buttons");
-const moon = document.querySelector('.moon');
 const errorBox = document.querySelector('.error-box');
 const forecast = new Forecast();
 const fahToCel = fah => Math.round((fah - 32) * (5 / 9));
 let data1 = [];
-let night = false;
+let uiUpdateCounter = 0;
 
 // Sample display data if an API error occurs
 
@@ -31,9 +30,12 @@ sample = () => {
 const updateUI = data => {
   const { cityDetails, weather, forecast5Days, day12Hours } = data;
   data1 = data;
-  document.getElementById('forecast-div').classList.remove('d-none');
-  document.getElementById('temp-switch').classList.remove('d-none');
-  document.getElementById('launch-icon').classList.add('d-none');
+  if(uiUpdateCounter === 0){
+    document.getElementById('forecast-div').classList.remove('d-none');
+    document.getElementById('temp-switch').classList.remove('d-none');
+    document.getElementById('launch-icon').classList.add('d-none');
+    uiUpdateCounter += 1;
+  }
   checkDayNight(weather);
   fillCurrentConditions(cityDetails, weather);
   fill12Hours(day12Hours);
@@ -83,7 +85,15 @@ tempSwitch.addEventListener("click", e => {
 
 forecastButton.addEventListener('click', e => {
   let title = document.getElementById('forecast-title');
-  if(e.target.innerText === "Show Forecast"){
+  console.log(e.target.innerText);
+  if(e.target.innerText === "Show Forecasts"){
+    e.target.innerText = "Hide Forecasts";
+    forecastBox.classList.toggle('d-none');
+    document.getElementById('days5-btn').classList.toggle('d-none');
+    document.getElementById('hours12-btn').classList.toggle('d-none');
+  }
+  else if(e.target.innerText === "Hide Forecasts"){
+    e.target.innerText = "Show Forecasts";
     forecastBox.classList.toggle('d-none');
     document.getElementById('days5-btn').classList.toggle('d-none');
     document.getElementById('hours12-btn').classList.toggle('d-none');
@@ -100,12 +110,25 @@ forecastButton.addEventListener('click', e => {
   }
 })
 
+windowCheck =_=>{
+  if(window.innerWidth > 1023){
+    container12Hours.classList.contains('d-none') && 
+      container5Days.classList.remove('d-none');
+    }
+}
+
+window.innerWidth > 1023 && container5Days.classList.toggle('d-none');
+
 // Check for temperature scale preferecnce
 
 if (localStorage.getItem("tempPreference")) {
   let scale = localStorage.getItem("tempPreference");
   tempSwitch.innerHTML = scale;
 };
+
+fetch('toronto.json')
+.then(res => res.json())
+.then(data => updateUI(data))
 
 // Get data for the last location queried
 /*
