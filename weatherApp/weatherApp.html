@@ -11,9 +11,6 @@
     <body onresize="windowCheck()">
         <div class="main-container">
             <img src="img/launchIcon.png" alt="sun-cloud" id="launch-icon">
-            <div class="moon d-none">
-                <img src="img/moon.png" alt="moon">
-            </div>
             <div class="error-box d-none"></div>
             <h1 id="title" class="d-none">Weathernator</h1>
             <div class="container">
@@ -34,7 +31,8 @@
                 <div id="forecast-div" class="d-none">
                     <div id="forecast-buttons">
                         <button class="forecast-btn d-none" id="hours12-btn">12-Hours</button>
-                        <button class="forecast-btn">Show Forecast</button>
+                        <div class="d-none" id="wide-forecast-title">Forecast</div>
+                        <button class="forecast-btn" id="forecast-toggle-btn">Show Forecasts</button>
                         <button class="forecast-btn d-none" id="days5-btn">5-Days</button>
                     </div>
                     <div id="forecast-box" class="d-none">
