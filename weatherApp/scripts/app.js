@@ -22,7 +22,7 @@ sample = () => {
       console.log(data);
       updateUI(data)
     })
-    .catch((err => alert(err)));
+    .catch(err => alert(err));
 }
 
 // UI updater
@@ -126,15 +126,10 @@ if (localStorage.getItem("tempPreference")) {
   tempSwitch.innerHTML = scale;
 };
 
-fetch('toronto.json')
-.then(res => res.json())
-.then(data => updateUI(data))
-
 // Get data for the last location queried
-/*
+
 if (localStorage.getItem('city')) {
   forecast.updateCity(localStorage.getItem('city'))
     .then(data => updateUI(data))
     .catch(err => console.log(err));
 };
-*/
