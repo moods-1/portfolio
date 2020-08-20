@@ -30,7 +30,7 @@ if(window.innerWidth < 670){
             </a>
           </div>
           <div class="description">
-            <p>Accuweather API, HTML5, CSS3, and JavaScript</p>
+            <p>AccuWeather API, HTML5, CSS3, and JavaScript</p>
           </div>
           <div class="git-link">
             <img src="/images/github.svg" alt="" />
