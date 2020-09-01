@@ -35,24 +35,10 @@ timeConversion = time => {
   let minutes = d.getUTCMinutes();
   let meridiem = "";
   let meridiem12 = "";
-  if (currentHour == 0) {
-    currentHour = 12;
-    meridiem = "AM";
-  } else if (currentHour >= 13) {
-    currentHour = currentHour - 12;
-    meridiem = "PM";
-  } else {
-    meridiem = "AM";
-  }
-  if (hours12Hour == 0) {
-    hours12Hour = 12;
-    meridiem12 = "AM";
-  } else if (hours12Hour >= 13) {
-    hours12Hour = hours12Hour - 12;
-    meridiem12 = "PM";
-  } else {
-    meridiem12 = "AM";
-  }
+  meridiem = currentHour < 12? "AM":"PM";
+  currentHour = currentHour > 12? currentHour - 12: currentHour;
+  meridiem12 = hours12Hour < 12? "AM":"PM";
+  hours12Hour = hours12Hour > 12? hours12Hour - 12: hours12Hour;
 
   return { month, day, dayShort, date, currentHour, hours12Hour, minutes, meridiem, meridiem12 };
 }
