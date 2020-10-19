@@ -13,63 +13,79 @@ const showcase = document.querySelector('#showcase');
 const contact = document.querySelector('#contact');
 const projectContainer = document.getElementById('project-container');
 const form = document.getElementById('contact-form');
-const clickSound = new Audio();
 let foodSource = "";
 let foodToggler = "";
-clickSound.src = "./audio/click.mp3";
 let counter = 0;
 
-// Done to prevent three design boxes coming down on page launch/refresh
+const intervalTimer = () =>{
+  return{
+    start: ()=>{
+      mobileTimer = setInterval(()=>{
+        if(window.innerWidth < 670){
+          projectContainer.innerHTML =`
+            <div class="design-box" id="design${data[counter].id}">
+              <div class="image-container">
+                <a href=${data[counter].url} rel="noopener noreferrer" target="_blank">
+                  <img src=${data[counter].image} alt="" class="projectSRC" />
+                </a>
+              </div>
+              <div class="git-link">
+                <a href=${data[counter].gitLink} rel="noopener noreferrer" target="_blank">
+                  <img src="/images/github.svg" alt="" />
+                </a>
+              </div>
+            </div>
+            `;
+        if(counter < data.length) counter ++;
+        if(counter == data.length) counter = 0;
+        }
+      }, 2600);
+    },
+    stop: ()=> clearInterval(mobileTimer) 
+  }
+}
+let timer = intervalTimer();
 
 if(window.innerWidth < 670){
-  projectContainer.innerHTML =`
-  <div class="design-box" id="design1">
-          <div class="image-container">
-            <a href="./weatherApp/weatherApp.html" rel="noopener noreferrer" target="_blank">
-              <img src="/images/weatherAppGray.png" alt="" class="projectSRC" />
-            </a>
-          </div>
-          <div class="description">
-            <p>AccuWeather API, HTML5, CSS3, and JavaScript</p>
-          </div>
-          <div class="git-link">
-            <img src="/images/github.svg" alt="" />
-          </div>
-        </div>
-  `;
+  projectContainer.innerHTML +=`
+    <div class="design-box" id="design${data[0].id}">
+      <div class="image-container">
+        <a href=${data[0].url} rel="noopener noreferrer" target="_blank">
+          <img src=${data[0].image} alt="" class="projectSRC" />
+        </a>
+      </div>
+      <div class="git-link">
+        <a href=${data[0].gitLink} rel="noopener noreferrer" target="_blank">
+          <img src="/images/github.svg" alt="" />
+        </a>
+      </div>
+    </div>
+    `;
 }
 
-// Setup for dynamic designBox rendering
-
-fetch('./data/data.json')
-.then(response => response.json())
-.then(data => divData = data)
-.catch(err => alert(err));
-
-mobileTimer = setInterval(()=>{
-  if(window.innerWidth < 670){
-    projectContainer.innerHTML =`
-      <div class="design-box" id="design${divData[counter].id}">
+const projectFiller = () =>{
+  data.forEach(box =>{
+    projectContainer.innerHTML +=`
+      <div class="design-box" id="design${box.id}">
         <div class="image-container">
-          <a href=${divData[counter].url} rel="noopener noreferrer" target="_blank">
-            <img src=${divData[counter].image} alt="" class="projectSRC" />
+          <a href=${box.url} rel="noopener noreferrer" target="_blank">
+            <img src=${box.image} alt="" class="projectSRC" />
           </a>
         </div>
         <div class="git-link">
-          <a href=${divData[counter].gitLink} rel="noopener noreferrer" target="_blank">
+          <a href=${box.gitLink} rel="noopener noreferrer" target="_blank">
             <img src="/images/github.svg" alt="" />
           </a>
         </div>
-        <div class="description">
-          <p>${divData[counter].description}</p>
-        </div>
       </div>
       `;
-  if(counter < divData.length) counter ++;
-  if(counter == divData.length) counter = 0;
-  }
-}, 3000);
+  })
+}
 
+// Done to prevent three design boxes coming down on page launch/refresh
+
+if(window.innerWidth < 670) timer.start();
+else projectFiller();
 
 // Required for when the setInterval is not actively altering the DOM 
 // when the screen size is greater than 659px. Only one designBox is
@@ -77,31 +93,13 @@ mobileTimer = setInterval(()=>{
 // 659px.
 
 screenTracker = ()=>{
-    if(window.innerWidth > 669){
-      if(projectContainer.childElementCount < 2){
-        projectContainer.innerHTML = "";
-        divData.forEach(box =>{
-          projectContainer.innerHTML +=`
-            <div class="design-box" id="design${box.id}">
-              <div class="image-container">
-                <a href=${box.url} rel="noopener noreferrer" target="_blank">
-                  <img src=${box.image} alt="" class="projectSRC" />
-                </a>
-              </div>
-              <div class="git-link">
-                <a href=${box.gitLink} rel="noopener noreferrer" target="_blank">
-                  <img src="/images/github.svg" alt="" />
-                </a>
-              </div>
-              <div class="description">
-                <p>${box.description}</p>
-              </div>
-            </div>
-            `;
-          })
-        }       
-      }
-    }
+  if(window.innerWidth > 669){
+    if(projectContainer.childElementCount < 2){
+      projectContainer.innerHTML = "";
+      projectFiller();
+    } 
+  }
+}
 
 burgerBox.addEventListener("click", () => {
   if (foodToggler === 0) {
@@ -129,13 +127,7 @@ burgerBox.addEventListener("click", () => {
   foodImage.setAttribute("src", foodSource);
 });
 
-// Page sounds
-
-projectImage.forEach(image => {
-  image.addEventListener("mouseover", () => clickSound.play());
-});
-
-sendButton.addEventListener("mouseover", () => clickSound.play());
+// Email
 
 form.addEventListener("submit", e =>{
   e.preventDefault();
