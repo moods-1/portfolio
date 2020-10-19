@@ -1,23 +1,23 @@
 * { margin: 0; padding: 0; box-sizing: border-box; overflow-x: hidden;
   color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 html{scroll-behavior: smooth;}
-body { width: 100vw; height: 100vh; min-width: 320px; margin: auto; padding: 0px; margin: 0px;
-  background: url('/images/griddy.png'); overflow-x: hidden;}
+body { width: 100%; height: 100vh; min-width: 375px; margin: auto; padding: 0px; margin: 0px;
+  background: rgba(0, 0, 0, 0.85);}
 
 .main-container{
-  width: 100vw; 
+  width: 100%;
+  margin: auto; 
   min-height: calc(100vh - 65px);
   overflow-x: hidden;
 } 
   /* Header */
 
 header { display: flex; justify-content: space-between; align-items: center;
-  background: linear-gradient(rgb(65, 65, 65), rgb(96, 102, 105));
-  width: 100vw; top: 0; height: auto; min-width: 320px; opacity: 0; z-index: 10;
-  animation-name: headerFade;
-  animation-duration: 1500ms;
-  animation-delay: 3500ms;
-  animation-fill-mode: forwards;}
+  /*background: linear-gradient(rgb(65, 65, 65), rgb(96, 102, 105));*/
+  background: black;
+  width: 100%; top: 0; height: auto; min-width: 375px; opacity: 0; z-index: 10;
+  animation: headerFade 1.5s 3.5s forwards;
+}
 header img { width: auto; height: 60px;}
 h1{font-weight: 400; font-size: 2.5em;}
 #logo { margin-left: 5%;}
@@ -37,16 +37,11 @@ ul a:hover { color: rgb(218, 214, 214); opacity: 0.8;}
   min-height: 400px; height: auto; width: 100%; padding: 10px 0 20px 0;
   position: relative; text-align: center;}
 #showcase h1 { margin-bottom: 10px; opacity: 0; font-size: 2.5em;
-  animation: titleFade;
-  animation-duration: 1500ms;
-  animation-delay: 3500ms;
-  animation-fill-mode: forwards;}
+  animation: titleFade 1.5s 3.5s forwards;}
 @keyframes headerFade
-{  from { opacity: 0;}
-    to { opacity: 1;}}
+{ to { opacity: 1;}}
 @keyframes titleFade 
-{ from { opacity: 0;}
-  to {opacity: 1;}}
+{ to {opacity: 1;}}
 #project-container {
   position: relative;
   display: grid;
@@ -60,58 +55,36 @@ ul a:hover { color: rgb(218, 214, 214); opacity: 0.8;}
   width: 65%;
   top: -500px;
   padding: 10px;
-  animation-name: startDrop;
-  animation-duration: 3500ms;
-  animation-fill-mode: forwards;
+  animation: startDrop 3500ms forwards;
 }
 @keyframes startDrop
 { from { top: -500px;}
   to { top: 0px;}}
-.design-box { width: 200px; height: 360px; border-radius: 5px; overflow: hidden;}
+.design-box { width: 200px; height: 340px; border-radius: 5px; overflow: hidden;}
 .design-box:hover { transform: scale(1.005); box-shadow: 3px 2px rgba(255, 255, 255, 0.418);}
-.image-container { width: 100%; height: 70%; overflow: hidden;}
+.image-container { width: 100%; height: 92%; overflow: hidden;}
 .image-container img { width: 100%; height: 100%;}
-.description{ height: 22%; padding: 10px 5px; font-size: 18px; display: flex;
-  align-items: center; justify-content: center; background: rgb(96, 102, 105);
-  border-top: solid 1px gray; overflow: inherit;}
-.git-link { height: 8%; border-top: solid 1px gray; background: rgb(96, 102, 105);
+.git-link { height: 8%; border-top: solid 1px gray; background: black;/*background: rgb(96, 102, 105);*/
   overflow: inherit;}
 .git-link img { height: 100%; width: 50%;}
 
 /* Skills */
 
-.profile-container { position: relative; color: white; background: rgb(96, 102, 105);}
+.profile-container { position: relative; color: white; background: black;/*background: rgb(96, 102, 105);*/}
 .about { margin: auto; padding-top: 20px; margin-bottom: 10px; 
   text-align: center;  width: 100%;}
 .toolset-container { margin: auto; justify-content: center;
-  display: grid; gap: 5px; grid-template-columns: repeat(auto-fit, 320px);
-  width: 660px;  height: auto;}
+  display: flex;
+  flex-wrap: wrap;
+  /*display: grid; gap: 5px; grid-template-columns: repeat(auto-fit, 320px);*/
+  width: 700px; min-width: 415px; height: auto;}
 .profile { height: auto; width: 320px;  padding: 5px 10px; padding-bottom: 20px;
   text-align: left;}
 #profile-picture { width: 100px;  height: 100px; border-radius: 50%;}
 #profile-name {font-size: 20px; position: relative}
 #about-me{ text-align: left; font-size: 18px;}
-.skills-box { height: 260px; width: 320px; padding: 5px 10px;}
-#skills-head { margin-bottom: 20px; }
-#skills-head p { font-size: 20px; text-align: left; position: relative;}
-.skills-container { width: auto; display: flex; justify-content: center; align-items: center;}
-.title-container {text-align: left; width: 100%; height: 20px; margin-bottom: 10px; overflow: hidden;}
-#skills-titles { width: 130px; height: auto;}
-#skills-titles span { text-align: left;}
-#skills-progress { width: 180px; height: auto;}
-.progress-container {
-  width: 100%;
-  height: 20px;
-  margin-bottom: 10px;
-  background: white;
-  border: solid rgb(0, 183, 255) 1px;
-  overflow: hidden;
-  border-radius: 50px;
-}
-.moods-progress-bar { position: relative; width: 90%; background: rgb(63, 169, 245);}
-.moods-progress-bar span { margin-left: 75px; font-size: 16px;}
-#js-progress, #sql-progress { position: relative; width: 80%; background: rgb(63, 169, 245);}
-#react-progress, #photoshop-progress { position: relative; width: 75%; background: rgb(63, 169, 245);}
+.skills-box { width: 360px; height: 260px;}
+.skills-box img { width:353px; height: 245px;}
 
 /* Contact */
 
@@ -132,7 +105,7 @@ form input::-ms-input-placeholder{ color: rgba(255, 255, 255, 0.692);}/* MS Edge
 /* Footer */
 
 footer { width: 100%;padding: 20px; color: white; height: 65px;
-  background: linear-gradient(rgb(96, 102, 105),rgb(65, 65, 65));
+  background: black;
   text-align: center;}
 
 /* Media Queries */
@@ -147,7 +120,7 @@ footer { width: 100%;padding: 20px; color: white; height: 65px;
   .design-box { min-width: 200px; margin: auto; margin-bottom: 0px;}
   .about{margin-bottom: 5px;}
   .toolset-container{ width: 360px; grid-template-columns: repeat(auto-fit, 100%);}
-  .profile, .skills-box{width: 100%;}
+  .profile, .skills-box{width: 360px;} 
   .profile img {float: none; margin-bottom: 10px;}  
 }
 @media(max-width: 669px){
@@ -156,6 +129,7 @@ footer { width: 100%;padding: 20px; color: white; height: 65px;
     #project-container::-webkit-scrollbar { display: none;} 
   }
 @media (max-width: 415px) {
+    #burger-box{display:block}
     #top-nav { display: none; margin:0; padding:0;}
     #logo { margin-left: 0; left: 50%; transform: scale(0.7);}
     #vertical-nav{ position: relative; width: 100%; background: rgb(63, 169, 245);
@@ -168,6 +142,6 @@ footer { width: 100%;padding: 20px; color: white; height: 65px;
     
     ul li { padding-top: 10px;}
     ul li a { padding: 0;}
-    .toolset-container{ width: 320px;}
+    .toolset-container{ width: 375px;}
     #form-container { width: 100%; margin: auto; justify-content: flex-start;}    
 }
