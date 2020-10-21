@@ -132,7 +132,7 @@ footer { width: 100%;padding: 20px; color: white; height: 65px;
     #burger-box{display:block}
     #top-nav { display: none; margin:0; padding:0;}
     #logo { margin-left: 0; left: 50%; transform: scale(0.7);}
-    #vertical-nav{ position: relative; width: 100%; background: rgb(63, 169, 245);
+    #vertical-nav{ position: relative; width: 100%; background: black;
       border-bottom: solid 1px rgb(96, 102, 105); text-align: center;}
     .nav-list{overflow: visible;}
     ul { display: block; font: 1.5em bold; padding: 0 0 15px 0;
