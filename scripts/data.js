@@ -1,9 +1,9 @@
 const data =[
     {
         "id": 1,
-        "url": "./weatherApp/weatherApp.html",
-        "image": "/images/weatherApp.png",
-        "gitLink":"https://github.com/moods-1/portfolio/tree/master/weatherApp"
+        "url": "https://webbflixx.web.app",
+        "image": "/images/webflixApp.png",
+        "gitLink":"https://github.com/moods-1/webflix"
     },
     {
         "id": 2,
@@ -13,8 +13,9 @@ const data =[
     },
     {
         "id": 3,
-        "url": "https://webbflixx.web.app",
-        "image": "/images/webflixApp.png",
-        "gitLink":"https://github.com/moods-1/webflix"
+        "url": "./weatherApp/weatherApp.html",
+        "image": "/images/weatherApp.png",
+        "gitLink":"https://github.com/moods-1/portfolio/tree/master/weatherApp"
     }
+    
 ]
