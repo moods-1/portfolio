@@ -8,7 +8,8 @@ This is a collection of a few projects that demonstrate some of my programming s
   - JavaScript ES6
   - React JS
   - Node (NPM)
+  - PHP
   - Photoshop CC 2019
-  - Git/GitHub
-  - Accuweather API (free version)
-  - Paypal Payment SDK (sandbox)
+  - Git/GitHub  
+  - Material UI
+  - Various APIs
