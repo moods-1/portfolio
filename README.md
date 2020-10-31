@@ -9,7 +9,7 @@ This is a collection of a few projects that demonstrate some of my programming s
   - React JS
   - Node (NPM)
   - PHP
-  - Photoshop CC 2019
-  - Git/GitHub  
   - Material UI
   - Various APIs
+  - Photoshop CC 2019
+  - Git/GitHub
