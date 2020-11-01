@@ -19,6 +19,9 @@
     />
     <title>Carl's Portfolio</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/skills.css" />
+    <link rel="stylesheet" type="text/css" href="/css/showcase.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mediaQueries.css" />
   </head>
   <body onresize="screenTracker()">   
     <div class="main-container"> 
@@ -64,7 +67,47 @@
             </p>
           </div>
           <div class="skills-box">
-            <img src="/images/skills.png" alt="skills" srcset="">
+            <div id="skills-head">
+              <p>SKILLS</p>
+            </div>
+            <div class="skills-container">
+              <div id="skills-titles">
+                <div class="title-container"><span>HTML5</span></div>
+                <div class="title-container"><span>CSS3</span></div>
+                <div class="title-container"><span>JAVASCRIPT ES6</span></div>
+                <div class="title-container"><span>SQL</span></div>
+                <div class="title-container"><span>REACT</span></div>
+                <div class="title-container"><span>NODE JS</span></div>
+              </div>
+              <div id="skills-progress">
+                <div class="progress-container">
+                  <div class="moods-progress-bar"><span>90%</span></div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar"><span>90%</span></div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar" id="js-progress">
+                    <span>80%</span>
+                  </div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar" id="sql-progress">
+                    <span>80%</span>
+                  </div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar" id="react-progress">
+                    <span>80%</span>
+                  </div>
+                </div>
+                <div class="progress-container">
+                  <div class="moods-progress-bar" id="node-progress">
+                    <span>75%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -76,6 +119,7 @@
             id="contact-form" 
             method="post" 
             action="">
+            <label for="name"></label>
             <input
               type="text"
               name="name"
@@ -83,8 +127,8 @@
               placeholder="Your name"
               maxlength="30"
               required
-
             /><br />
+            <label for="email"></label>
             <input
               type="email"
               name="email"
@@ -93,6 +137,7 @@
               placeholder="Your email"
               required
             /><br />
+            <label for="message"></label>
             <textarea
               name="message"
               id="message"
