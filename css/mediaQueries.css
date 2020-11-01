@@ -1,0 +1,120 @@
+/* Media Queries */
+
+@media (max-width: 1650px) {
+  #project-container {
+    width: 70%;
+  }
+}
+@media (max-width: 1350px) {
+  #project-container {
+    width: 80%;
+  }
+}
+@media (max-width: 1024px) {
+  #project-container {
+    width: 90%;
+  }
+  .design-box {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  #project-container {
+    width: 100%;
+  }
+  .design-box {
+    min-width: 200px;
+    margin: auto;
+    margin-bottom: 0px;
+  }
+  .about {
+    margin-bottom: 5px;
+  }
+  .toolset-container {
+    width: 360px;
+    grid-template-columns: repeat(auto-fit, 100%);
+  }
+  .profile,
+  .skills-box {
+    width: 360px;
+  }
+  .profile img {
+    float: none;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 669px) {
+  #project-container {
+    display: flex;
+    height: 360px;
+    min-width: 201px;
+    width: auto;
+    padding: 0;
+    overflow-x: visible;
+    -ms-overflow-style: none;
+  }
+  #project-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 415px) {
+  #burger-box {
+    display: block;
+  }
+  #top-nav {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+  #logo {
+    margin-left: 0;
+    left: 50%;
+    transform: scale(0.7);
+  }
+  #vertical-nav {
+    position: relative;
+    width: 100%;
+    background: black;
+    border-bottom: solid 1px rgb(96, 102, 105);
+    text-align: center;
+  }
+  .nav-list {
+    overflow: visible;
+  }
+  ul {
+    display: block;
+    font: 1.5em bold;
+    padding: 0 0 15px 0;
+    align-items: flex-end;
+    transform: translateX(300px);
+    width: 100%;
+  }
+  @keyframes navEaseIn {
+    to {
+      transform: translateX(-300px);
+    }
+  }
+  @keyframes navEaseOut {
+    from {
+      transform: translateX(-300px);
+    }
+    to {
+      transform: translateX(300px);
+    }
+  }
+
+  ul li {
+    padding-top: 10px;
+  }
+  ul li a {
+    padding: 0;
+  }
+  .toolset-container {
+    width: 375px;
+  }
+  #form-container {
+    width: 100%;
+    margin: auto;
+    justify-content: flex-start;
+  }
+}

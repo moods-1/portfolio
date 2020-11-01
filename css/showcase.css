@@ -1,0 +1,82 @@
+/* Showcase */
+#showcase {
+  min-height: 400px;
+  height: auto;
+  width: 100%;
+  padding: 10px 0 20px 0;
+  position: relative;
+  text-align: center;
+  background-image: url("/images/blackTectured.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#showcase h1 {
+  margin-bottom: 10px;
+  opacity: 0;
+  font-size: 2.7em;
+  font-weight: 600;
+  animation: titleFade 1.5s 3.5s forwards;
+}
+@keyframes headerFade {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes titleFade {
+  to {
+    opacity: 1;
+  }
+}
+#project-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 360px;
+  grid-auto-rows: 360px;
+  justify-items: center;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  width: 65%;
+  top: -500px;
+  padding: 10px;
+  animation: startDrop 3500ms forwards;
+}
+@keyframes startDrop {
+  from {
+    top: -500px;
+  }
+  to {
+    top: 0px;
+  }
+}
+.design-box {
+  width: 200px;
+  height: 340px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.design-box:hover {
+  transform: scale(1.005);
+  box-shadow: 3px 2px rgba(255, 255, 255, 0.418);
+}
+.image-container {
+  width: 100%;
+  height: 92%;
+  overflow: hidden;
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+}
+.git-link {
+  height: 8%;
+  border-top: solid 1px gray;
+  background: black; /*background: rgb(96, 102, 105);*/
+  overflow: inherit;
+}
+.git-link img {
+  height: 100%;
+  width: 50%;
+}
