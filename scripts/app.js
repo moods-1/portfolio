@@ -26,12 +26,12 @@ const intervalTimer = () =>{
             <div class="design-box" id="design${data[counter].id}">
               <div class="image-container">
                 <a href=${data[counter].url} rel="noopener noreferrer" target="_blank">
-                  <img src=${data[counter].image} alt="" class="projectSRC" />
+                  <img src=${data[counter].image} alt="app image" class="projectSRC" />
                 </a>
               </div>
               <div class="git-link">
                 <a href=${data[counter].gitLink} rel="noopener noreferrer" target="_blank">
-                  <img src="/images/github.svg" alt="" />
+                  <img src="/images/github.svg" alt="gitHub logo" />
                 </a>
               </div>
             </div>
@@ -45,18 +45,19 @@ const intervalTimer = () =>{
   }
 }
 let timer = intervalTimer();
+timer.start();
 
 if(window.innerWidth < 670){
   projectContainer.innerHTML +=`
     <div class="design-box" id="design${data[0].id}">
       <div class="image-container">
         <a href=${data[0].url} rel="noopener noreferrer" target="_blank">
-          <img src=${data[0].image} alt="" class="projectSRC" />
+          <img src=${data[0].image} alt="app image" class="projectSRC" />
         </a>
       </div>
       <div class="git-link">
         <a href=${data[0].gitLink} rel="noopener noreferrer" target="_blank">
-          <img src="/images/github.svg" alt="" />
+          <img src="/images/github.svg" alt="gitHub logo" />
         </a>
       </div>
     </div>
@@ -69,12 +70,12 @@ const projectFiller = () =>{
       <div class="design-box" id="design${box.id}">
         <div class="image-container">
           <a href=${box.url} rel="noopener noreferrer" target="_blank">
-            <img src=${box.image} alt="" class="projectSRC" />
+            <img src=${box.image} alt="app image" class="projectSRC" />
           </a>
         </div>
         <div class="git-link">
           <a href=${box.gitLink} rel="noopener noreferrer" target="_blank">
-            <img src="/images/github.svg" alt="" />
+            <img src="/images/github.svg" alt="gitHub logo" />
           </a>
         </div>
       </div>
@@ -88,12 +89,12 @@ if(window.innerWidth < 670) timer.start();
 else projectFiller();
 
 // Required for when the setInterval is not actively altering the DOM 
-// when the screen size is greater than 659px. Only one designBox is
+// when the screen size is greater than 669px. Only one designBox is
 // present in the projectContainer when the screen size goes back above
-// 659px.
+// 669px.
 
 screenTracker = ()=>{
-  if(window.innerWidth > 669){
+  if(window.innerWidth >= 670){
     if(projectContainer.childElementCount < 2){
       projectContainer.innerHTML = "";
       projectFiller();
