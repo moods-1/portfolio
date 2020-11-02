@@ -16,24 +16,23 @@
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  min-width: 415px;
+  width: 80%;
   height: auto;
 }
 .profile {
   height: auto;
-  width: 400px;
-  padding: 5px 10px;
-  padding-bottom: 20px;
+  width: 380px;
+  padding: 5px 0px 20px 0;
   text-align: left;
 }
 #profile-picture {
-  width: 100px;
-  height: 100px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
 }
-#profile-name {
+.profile-title {
   font-size: 20px;
-  position: relative;
+  text-align: center;
 }
 #about-me {
   text-align: left;
@@ -41,16 +40,11 @@
 }
 .skills-box {
   height: 260px;
-  width: 400px;
+  width: 380px;
   padding: 5px 10px;
 }
-#skills-head {
+.skills-head {
   margin-bottom: 20px;
-}
-#skills-head p {
-  font-size: 20px;
-  text-align: left;
-  position: relative;
 }
 .skills-container {
   width: auto;

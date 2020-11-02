@@ -17,6 +17,9 @@
   .design-box {
     margin-bottom: 20px;
   }
+  .toolset-container{
+    width: 100%;
+  }
 }
 @media (max-width: 768px) {
   #project-container {
@@ -31,12 +34,14 @@
     margin-bottom: 5px;
   }
   .toolset-container {
-    width: 360px;
+    width: 80%;
+    min-width: 320px;
     grid-template-columns: repeat(auto-fit, 100%);
   }
   .profile,
   .skills-box {
-    width: 360px;
+    width: 100%;
+    padding: 0;
   }
   .profile img {
     float: none;
@@ -45,12 +50,12 @@
 }
 @media (max-width: 669px) {
   #project-container {
-    display: flex;
+    /*display: flex;*/
     height: 360px;
     min-width: 201px;
     width: auto;
     padding: 0;
-    overflow-x: visible;
+    overflow-x: hidden;
     -ms-overflow-style: none;
   }
   #project-container::-webkit-scrollbar {
@@ -102,15 +107,18 @@
       transform: translateX(300px);
     }
   }
-
   ul li {
     padding-top: 10px;
   }
   ul li a {
     padding: 0;
   }
-  .toolset-container {
-    width: 375px;
+  .toolset-container{
+    width: 100%;
+  }
+  .profile{
+    padding: 10px;
+    margin-bottom: 10px;;
   }
   #form-container {
     width: 100%;
