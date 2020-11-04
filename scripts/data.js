@@ -8,7 +8,7 @@ const data =[
     {
         "id": 2,
         "url": "https://webbflixx.web.app",
-        "image": "/images/webflixApp.png",
+        "image": "/images/webflixApp.jpg",
         "gitLink":"https://github.com/moods-1/webflix"
     },
     {
