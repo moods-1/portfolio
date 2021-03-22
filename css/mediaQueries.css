@@ -40,8 +40,8 @@
   }
   .profile,
   .skills-box {
-    width: 100%;
-    padding: 0;
+    width: 80%;
+    margin: 10px;
   }
   .profile img {
     float: none;

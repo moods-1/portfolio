@@ -16,7 +16,7 @@ body {
   margin: auto;
   padding: 0px;
   margin: 0px;
-  background: linear-gradient(black, black, rgb(75, 75, 75));
+  background: linear-gradient(#777, #555, #333);
 }
 
 .main-container {
@@ -31,18 +31,19 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: black;
+  background: rgb(60, 60, 60);
   width: 100%;
   top: 0;
   height: auto;
   min-width: 320px;
   opacity: 0;
   z-index: 10;
+  padding: 10px;
   animation: headerFade 1.5s 3.5s forwards;
 }
 header img {
   width: auto;
-  height: 60px;
+  height: 40px;
 }
 h1 {
   font-weight: 400;
@@ -60,14 +61,14 @@ ul {
   list-style-type: none;
 }
 ul a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1em;
   padding-right: 10px;
 }
 ul a:hover {
-  color: rgb(218, 214, 214);
+  color: rgba(255, 255, 255, 0.9);
   opacity: 0.8;
 }
 #burger-box {
@@ -77,7 +78,7 @@ ul a:hover {
   margin-right: 5%;
   overflow: hidden;
   transition: all 1s ease-in;
-} 
+}
 /* Slows the animation when triggered */
 #burger-box img {
   width: 100%;
@@ -102,6 +103,10 @@ label {
 #form-container {
   width: 320px;
   margin: auto;
+  margin-top: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px white;
   justify-content: flex-start;
 }
 form input {
@@ -112,6 +117,7 @@ form input {
   outline-style: none;
   color: white;
   background: none;
+  padding-left: 10px;
   font-size: 1.2em;
 }
 form input::placeholder {
@@ -130,16 +136,17 @@ form input::-ms-input-placeholder {
 }
 #submit-btn {
   width: 100%;
-  margin-top: 10px;
+  margin: 10px 0px;
   padding: 10px 0;
   font-size: 1.2em;
-  background: rgba(96, 102, 105, 0.747);
+  /*background: rgba(96, 102, 105, 0.747);*/
+  background: #000;
   border: none;
   outline-style: none;
   cursor: pointer;
 }
 #submit-btn:hover {
-  background: rgba(96, 102, 105);
+  background: #111;
 }
 
 /* Footer */
