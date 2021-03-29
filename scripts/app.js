@@ -128,6 +128,20 @@ burgerBox.addEventListener("click", () => {
   foodImage.setAttribute("src", foodSource);
 });
 
+// Hide vertical nav on link click
+
+const handleLink = () => {
+  console.log("In handle click.");
+  if (verticalNav.classList.contains("d-none")) {
+    verticalNav.classList.remove("d-none");
+    foodSource = "/images/fries.png";
+  } else {
+    verticalNav.classList.add("d-none");
+    foodSource = "/images/burger.png";
+  }
+  foodImage.setAttribute("src", foodSource);
+};
+
 // Email
 
 form.addEventListener("submit", (e) => {
