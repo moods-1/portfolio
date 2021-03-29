@@ -131,7 +131,6 @@ burgerBox.addEventListener("click", () => {
 // Hide vertical nav on link click
 
 const handleLink = () => {
-  console.log("In handle click.");
   if (verticalNav.classList.contains("d-none")) {
     verticalNav.classList.remove("d-none");
     foodSource = "/images/fries.png";
