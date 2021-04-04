@@ -1,5 +1,5 @@
 /* Skills */
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .profile-container {
   position: relative;
   color: white;
@@ -78,7 +78,7 @@
   width: 180px;
   height: auto;
 }
-#skills-progress span{
+#skills-progress span {
   position: relative;
   top: -2px;
 }
@@ -107,7 +107,7 @@
   width: 85%;
   background: rgb(95, 95, 95);
 }
-#vue-progress{
+#vue-progress {
   position: relative;
   width: 80%;
   background: rgb(95, 95, 95);

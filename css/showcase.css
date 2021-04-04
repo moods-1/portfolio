@@ -3,17 +3,18 @@
   min-height: 400px;
   height: auto;
   width: 100%;
-  padding: 10px 0 20px 0;
+  padding: 20px 0px;
   position: relative;
   text-align: center;
-  background: #aaa;
+  background: #000;
+
 }
 #showcase h1 {
   margin-bottom: 10px;
   opacity: 0;
   font-size: 2.7em;
   font-weight: 600;
-  color: #222;
+  color: #EEE;
   animation: titleFade 1.5s 3.5s forwards;
 }
 @keyframes headerFade {
@@ -54,7 +55,7 @@
   height: 340px;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 3px 3px 5px white;
+  border: 2px solid #FFF;
 }
 .design-box:hover {
   transform: scale(1.005);
@@ -71,7 +72,7 @@
 .git-link {
   height: 8%;
   border-top: solid 1px gray;
-  background: black; /*background: rgb(96, 102, 105);*/
+  background: black; 
   overflow: inherit;
 }
 .git-link img {
