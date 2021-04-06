@@ -10,6 +10,7 @@ const foodImage = document.querySelector("#burger");
 const verticalNav = document.querySelector("#vertical-nav");
 const about = document.querySelector(".profile-container");
 const showcase = document.querySelector("#showcase");
+const skillsContainer = document.getElementById("skills-box");
 const contact = document.querySelector("#contact");
 const projectContainer = document.getElementById("project-container");
 const form = document.getElementById("contact-form");
@@ -23,21 +24,21 @@ const intervalTimer = () => {
       mobileTimer = setInterval(() => {
         if (window.innerWidth < 670) {
           projectContainer.innerHTML = `
-            <div class="design-box" id="design${data[counter].id}">
+            <div class="design-box" id="design${projects[counter].id}">
               <div class="image-container">
-                <a href=${data[counter].url} rel="noopener noreferrer" target="_blank">
-                  <img src=${data[counter].image} alt="app image" class="projectSRC" />
+                <a href=${projects[counter].url} rel="noopener noreferrer" target="_blank">
+                  <img src=${projects[counter].image} alt="app image" class="projectSRC" />
                 </a>
               </div>
               <div class="git-link">
-                <a href=${data[counter].gitLink} rel="noopener noreferrer" target="_blank">
+                <a href=${projects[counter].gitLink} rel="noopener noreferrer" target="_blank">
                   <img src="/images/github.svg" alt="gitHub logo" />
                 </a>
               </div>
             </div>
             `;
-          if (counter < data.length) counter++;
-          if (counter == data.length) counter = 0;
+          if (counter < projects.length) counter++;
+          if (counter == projects.length) counter = 0;
         }
       }, 2600);
     },
@@ -49,14 +50,14 @@ timer.start();
 
 if (window.innerWidth < 670) {
   projectContainer.innerHTML += `
-    <div class="design-box" id="design${data[0].id}">
+    <div class="design-box" id="design${projects[0].id}">
       <div class="image-container">
-        <a href=${data[0].url} rel="noopener noreferrer" target="_blank">
-          <img src=${data[0].image} alt="app image" class="projectSRC" />
+        <a href=${projects[0].url} rel="noopener noreferrer" target="_blank">
+          <img src=${projects[0].image} alt="app image" class="projectSRC" />
         </a>
       </div>
       <div class="git-link">
-        <a href=${data[0].gitLink} rel="noopener noreferrer" target="_blank">
+        <a href=${projects[0].gitLink} rel="noopener noreferrer" target="_blank">
           <img src="/images/github.svg" alt="gitHub logo" />
         </a>
       </div>
@@ -65,7 +66,7 @@ if (window.innerWidth < 670) {
 }
 
 const projectFiller = () => {
-  data.forEach((box) => {
+  projects.forEach((box) => {
     projectContainer.innerHTML += `
       <div class="design-box" id="design${box.id}">
         <div class="image-container">
@@ -83,6 +84,18 @@ const projectFiller = () => {
   });
 };
 
+skills.forEach((skill) => {
+  skillsContainer.innerHTML += `
+    <div class="skill-box">
+      <p><span>${skill.skill}</span></p>
+      <img src=${skill.img} alt="${skill.skill}-icon">
+      <div class="progress-container">
+        <div class="moods-progress-bar" id=${skill.id}><span>${skill.percentage}</span></div>
+      </div>
+    </div>
+    `;
+});
+
 // Done to prevent three design boxes coming down on page launch/refresh
 
 if (window.innerWidth < 670) timer.start();
@@ -94,6 +107,11 @@ else projectFiller();
 // 669px.
 
 screenTracker = () => {
+  if(window.innerWidth >= 415){
+    verticalNav.classList.add("d-none");
+    foodToggler === 1;
+    foodImage.setAttribute("src", "/images/burger.png");
+  }
   if (window.innerWidth >= 670) {
     if (projectContainer.childElementCount < 2) {
       projectContainer.innerHTML = "";
@@ -101,6 +119,7 @@ screenTracker = () => {
     }
   }
 };
+
 
 burgerBox.addEventListener("click", () => {
   if (foodToggler === 0) {

@@ -5,9 +5,7 @@
   width: 100%;
   padding: 20px 0px;
   position: relative;
-  text-align: center;
   background: #000;
-
 }
 #showcase h1 {
   margin-bottom: 10px;
@@ -34,18 +32,15 @@
   grid-template-rows: 360px;
   grid-auto-rows: 360px;
   justify-items: center;
+  align-items: center;
   height: auto;
   margin: auto;
   overflow: hidden;
-  width: 65%;
+  width: 55%;
   top: -500px;
-  padding: 10px;
   animation: startDrop 3500ms forwards;
 }
 @keyframes startDrop {
-  from {
-    top: -500px;
-  }
   to {
     top: 0px;
   }

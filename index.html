@@ -22,119 +22,67 @@
       name="description"
       content="moodscreation: Mood's Creation is a portfolio site."
     />
-    <title>Carl's Portfolio</title>
+    <title>Carl's Portfolio - Editing</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="/css/skills.css" />
     <link rel="stylesheet" type="text/css" href="/css/showcase.css" />
     <link rel="stylesheet" type="text/css" href="/css/mediaQueries.css" />
   </head>
   <body onresize="screenTracker()">
-    <div class="main-container">
-      <header>
-        <div id="logo">
-          <img src="/images/moodsLogo.png" alt="Moods-logo" />
-        </div>
-        <nav id="top-nav">
+    <div class="main-container">  
+        <header>
+          <div class="head-narrow">
+            <div id="logo">
+              <h1>CARL MOODIE</h1>
+            </div>
+            <nav id="top-nav">
+              <ul class="nav-list">
+                <li class="top-nav-list-item"><a href="#about">About</a></li>
+                <li class="top-nav-list-item"><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+            <div id="burger-box" class="d-none">
+              <img src="/images/burger.png" alt="burger" id="burger" />
+            </div>
+          </div> 
+        </header>
+        <div class="d-none" id="vertical-nav">
           <ul class="nav-list">
-            <li class="top-nav-list-item"><a href="#about">About</a></li>
-            <li class="top-nav-list-item"><a href="#contact">Contact</a></li>
+            <li class="vertical-nav-list-item" onclick="handleLink()">
+              <a href="#about">About</a>
+            </li>
+            <li class="vertical-nav-list-item" onclick="handleLink()">
+              <a href="#contact">Contact</a>
+            </li>
           </ul>
-        </nav>
-        <div id="burger-box" class="d-none">
-          <img src="/images/burger.png" alt="burger" id="burger" />
         </div>
-      </header>
-      <div class="d-none" id="vertical-nav">
-        <ul class="nav-list">
-          <li class="vertical-nav-list-item" onclick="handleLink()">
-            <a href="#about">About</a>
-          </li>
-          <li class="vertical-nav-list-item" onclick="handleLink()">
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <!-- Design Section -->
-      <div id="showcase">
-        <h1>PROJECTS</h1>
-        <div id="project-container"><!-- Dynamically rendered --></div>
-      </div>
-
-      <!-- About and Skills -->
-
-      <div class="profile-container">
-        <div class="about" id="about">
-          <img
-            src="/images/profile.jpg"
-            alt="profile-pic"
-            id="profile-picture"
-          />
+        
+        <!-- Design Section -->
+        <div id="showcase"> 
+          <div id="project-container"><!-- Dynamically rendered --></div>
         </div>
-        <div class="toolset-container">
-          <div class="profile">
-            <p class="profile-title">CARL MOODIE</p>
-            <br />
-            <p id="about-me">
-              I am a Web Developer with a desire to learn new ways to bring the
-              imagined to reality with code. Currently, I am improving my
-              backend skills by creating APIs utilizing Node JS with the goal of
-              becoming a strong full-stack developer.
-            </p>
-          </div>
-          <div class="skills-box">
-            <div class="profile-title skills-head">
-              <p>SKILLS</p>
+  
+        <!-- About and Skills -->
+  
+        <div class="profile-container" id="about">
+          <div class="toolset-container">
+            <h1 class="section-title">Full Stack Web Developer</h1>
+            <div class="profile">  
+              <p id="about-me">
+                The MERN and MEVN stacks are the tools that I mainly use, but I am open to learning any required skills. MongoDB ( Atlas and local ) and MySQL, are the databases used in those stacks. I have a desire to learn new ways to bring the imagined to reality with clean and efficient code.
+              </p>
             </div>
-            <div class="skills-container">
-              <div id="skills-titles">
-                <div class="title-container"><span>HTML5</span></div>
-                <div class="title-container"><span>CSS3</span></div>
-                <div class="title-container"><span>JAVASCRIPT ES6</span></div>
-                <div class="title-container"><span>SQL</span></div>
-                <div class="title-container"><span>REACT JS</span></div>
-                <div class="title-container"><span>VUE JS</span></div>
-                <div class="title-container"><span>NODE JS</span></div>
-              </div>
-              <div id="skills-progress">
-                <div class="progress-container">
-                  <div class="moods-progress-bar"><span>90%</span></div>
-                </div>
-                <div class="progress-container">
-                  <div class="moods-progress-bar"><span>90%</span></div>
-                </div>
-                <div class="progress-container">
-                  <div class="moods-progress-bar" id="js-progress">
-                    <span>85%</span>
-                  </div>
-                </div>
-                <div class="progress-container">
-                  <div class="moods-progress-bar" id="sql-progress">
-                    <span>85%</span>
-                  </div>
-                </div>
-                <div class="progress-container">
-                  <div class="moods-progress-bar" id="react-progress">
-                    <span>85%</span>
-                  </div>
-                </div>
-                <div class="progress-container">
-                  <div class="moods-progress-bar" id="vue-progress">
-                    <span>80%</span>
-                  </div>
-                </div>
-                <div class="progress-container">
-                  <div class="moods-progress-bar" id="node-progress">
-                    <span>75%</span>
-                  </div>
-                </div>
-              </div>
+            <h1 class="section-title">Skills Barometer</h1>
+            <div id="skills-box"><!-- Dynamically rendered --></div>
             </div>
-          </div>
+            </div>
+          
         </div>
       </div>
+      
       <!-- Contact -->
       <div id="contact">
-        <h1>CONTACT</h1>
+        <h1 class="section-title" id="contact-title">Contact</h1>
         <div id="form-container">
           <form id="contact-form" method="post" action="">
             <label for="name"></label>
@@ -168,7 +116,7 @@
             <button type="submit" id="submit-btn">SEND</button>
           </form>
         </div>
-      </div>
+    </div>
     </div>
 
     <footer>

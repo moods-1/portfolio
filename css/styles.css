@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&family=Work+Sans&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&family=Work+Sans&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
   color: white;
-  font-family: 'Jomolhari', serif;
+  font-family: 'Vollkorn', serif;
 }
 html {
   scroll-behavior: smooth;
@@ -19,7 +20,6 @@ body {
   margin: 0px;
   background: linear-gradient(#777, #555, #333);
 }
-
 .main-container {
   width: 100%;
   margin: auto;
@@ -27,38 +27,30 @@ body {
   overflow-x: hidden;
 }
 /* Header */
-
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: rgb(60, 60, 60);
   width: 100%;
   top: 0;
-  height: auto;
+  height: 60px;
   min-width: 320px;
   opacity: 0;
   z-index: 10;
-  padding: 10px;
   animation: headerFade 1.5s 3.5s forwards;
 }
-header img {
-  width: auto;
-  height: 40px;
+.head-narrow{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55%;
 }
-h1 {
-  font-weight: 400;
-  font-size: 2.5em;
-}
-#logo {
-  margin-left: 5%;
-}
-#top-nav {
-  margin-right: 5%;
+#logo{
+  font-size: 10px;
 }
 ul {
   display: inline-flex;
-  padding-right: 10px;
   list-style-type: none;
 }
 ul a {
@@ -66,10 +58,9 @@ ul a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1em;
-  padding-right: 10px;
+  margin-left: 10px;
 }
 ul a:hover {
-  color: rgba(255, 255, 255, 0.9);
   opacity: 0.8;
 }
 #burger-box {
@@ -98,13 +89,13 @@ label {
   position: relative;
   width: 100%;
   height: auto;
-  padding: 20px 15px;
+  padding: 0px 15px 20px ;
   text-align: center;
 }
 #form-container {
   width: 320px;
+  min-width: 260px;
   margin: auto;
-  margin-top: 10px;
   border: 1px solid lightgray;
   border-radius: 5px;
   box-shadow: 0px 0px 5px white;

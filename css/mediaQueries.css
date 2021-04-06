@@ -2,46 +2,44 @@
 
 @media (max-width: 1650px) {
   #project-container {
-    width: 70%;
+    width: 55%;
   }
 }
 @media (max-width: 1350px) {
   #project-container {
-    width: 80%;
+    width: 55%;
   }
 }
 @media (max-width: 1024px) {
+  .toolset-container,
+  .head-narrow,
   #project-container {
-    width: 90%;
+    width: 80%;
   }
-  .design-box {
-    margin-bottom: 20px;
-  }
-  .toolset-container{
-    width: 100%;
+  #project-container {
+    padding: 10px 0px;
   }
 }
 @media (max-width: 768px) {
-  #project-container {
-    width: 100%;
-  }
   .design-box {
     min-width: 200px;
     margin: auto;
-    margin-bottom: 0px;
   }
   .about {
     margin-bottom: 5px;
   }
   .toolset-container {
-    width: 80%;
+    width: 100%;
     min-width: 320px;
     grid-template-columns: repeat(auto-fit, 100%);
   }
   .profile,
-  .skills-box {
+  .section-title,
+  #skills-box {
     width: 80%;
-    margin: 10px;
+  }
+  #contact-title {
+    width: 100%;
   }
   .profile img {
     float: none;
@@ -49,11 +47,9 @@
   }
 }
 @media (max-width: 669px) {
-  #project-container {
-    /*display: flex;*/
+   #project-container {
     height: 360px;
     min-width: 201px;
-    width: auto;
     padding: 0;
     overflow-x: hidden;
     -ms-overflow-style: none;
@@ -61,8 +57,15 @@
   #project-container::-webkit-scrollbar {
     display: none;
   }
+  .toolset-container {
+    text-align: center;
+  }
+  
 }
 @media (max-width: 415px) {
+  .head-narrow {
+    width: 95%;
+  }
   #burger-box {
     display: block;
   }
@@ -70,11 +73,6 @@
     display: none;
     margin: 0;
     padding: 0;
-  }
-  #logo {
-    margin-left: 0;
-    left: 50%;
-    transform: scale(0.7);
   }
   #vertical-nav {
     position: relative;
@@ -113,16 +111,32 @@
   ul li a {
     padding: 0;
   }
-  .toolset-container{
+  #contact, .toolset-container {
     width: 100%;
   }
-  .profile{
-    padding: 10px;
-    margin-bottom: 10px;;
+  .profile-container{
+    padding-top: 20px;
+  }
+  .section-title {
+    margin: 0px;
+    transform: scale(0.7);
+  }
+  #skills-box {
+    padding: 20px 0px;
+    justify-content: center;
+  }
+  #logo {
+    margin-left: 0;
+    left: 50%;
+    transform: scale(0.7);
+  }
+  #about-me{
+    transform: scale(0.8);
   }
   #form-container {
     width: 100%;
     margin: auto;
+    margin-top: 20px;
     justify-content: flex-start;
   }
 }
