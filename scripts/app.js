@@ -120,7 +120,6 @@ screenTracker = () => {
   }
 };
 
-
 burgerBox.addEventListener("click", () => {
   if (foodToggler === 0) {
     navListItems.reverse().forEach((link, index) => {
