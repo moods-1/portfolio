@@ -50,7 +50,7 @@
   height: 340px;
   border-radius: 5px;
   overflow: hidden;
-  border: 2px solid #FFF;
+  border: 2px solid #fff;
 }
 .design-box:hover {
   transform: scale(1.005);
@@ -67,7 +67,7 @@
 .git-link {
   height: 8%;
   border-top: solid 1px gray;
-  background: black; 
+  background: black;
   overflow: inherit;
 }
 .git-link img {

@@ -73,42 +73,39 @@
   font-size: 16px;
   text-align: center;
 }
-#html-progress {
+.moods-progress-bar span{
   position: relative;
+  font-family: 'Times New Roman', Times, serif;
+  top: -1px;
+  left: 10%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+}
+#html-progress {
   width: 90%;
   background: rgb(228, 79, 38);
 }
 #css-progress {
-  position: relative;
   width: 90%;
   background: rgb(21, 114, 182);
 }
-.moods-progress-bar span{
-  position: relative;
-  top: -2px;
-}
 #js-progress{
-  position: relative;
   width: 85%;
   background: rgb(204, 174, 3);
 }
 #sql-progress{
-  position: relative;
   width: 85%;
   background: rgb(4, 120, 133);
 }
 #react-progress {
-  position: relative;
   width: 85%;
   background: rgb(4, 183, 214);
 }
 #vue-progress {
-  position: relative;
   width: 80%;
   background: rgb(66, 184, 131);
 }
 #node-progress {
-  position: relative;
   width: 75%;
   background: rgb(95, 95, 95);
 }
