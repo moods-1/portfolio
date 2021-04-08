@@ -3,9 +3,8 @@
   min-height: 400px;
   height: auto;
   width: 100%;
-  padding: 20px 0px;
+  padding-top: 50px;
   position: relative;
-  background: #000;
 }
 #showcase h1 {
   margin-bottom: 10px;
@@ -29,8 +28,9 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: 360px;
-  grid-auto-rows: 360px;
+  grid-template-rows: 400px;
+  grid-auto-rows: 400px;
+  gap: 20px;
   justify-items: center;
   align-items: center;
   height: auto;
@@ -46,31 +46,54 @@
   }
 }
 .design-box {
+  position: relative;
   width: 200px;
-  height: 340px;
-  border-radius: 5px;
+  height: 400px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
-  border: 2px solid #fff;
 }
 .design-box:hover {
   transform: scale(1.005);
 }
-.image-container {
+.phone-frame-box{
   width: 100%;
-  height: 92%;
+  height: 100%;
+  overflow: hidden;
+}
+.phone-frame{ 
+  width: 100%;
+  height: 100%;
+}
+.image-container {
+  position: absolute;
+  top: 45px;
+  left: 11px;
+  width: 90%;
+  height: 70%;;
   overflow: hidden;
 }
 .image-container img {
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 }
 .git-link {
+  position: absolute;
+  padding: 5px;
+  bottom: 45px;
+  left: 11px;
   height: 8%;
+  width: 90%;
   border-top: solid 1px gray;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   background: black;
-  overflow: inherit;
+  overflow: hidden;
 }
 .git-link img {
+  margin-left: 40px;
   height: 100%;
   width: 50%;
 }

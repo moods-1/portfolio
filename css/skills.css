@@ -46,6 +46,7 @@
   flex-wrap: wrap;
   height: auto;
   width: 100%;
+  border: 1px transparent solid;
 }
 .skill-box{
   width: 150px;
@@ -75,6 +76,7 @@
 }
 .moods-progress-bar span{
   position: relative;
+  color: #FFF;
   font-family: 'Times New Roman', Times, serif;
   top: -1px;
   left: 10%;

@@ -1,11 +1,14 @@
 /* @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&family=Work+Sans&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Vollkorn&display=swap");
+:root{
+  --primary: rgb(5, 71, 162);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  color: white;
+  color: var(--primary);
   font-family: "Vollkorn", serif;
 }
 html {
@@ -18,7 +21,7 @@ body {
   margin: auto;
   padding: 0px;
   margin: 0px;
-  background: linear-gradient(#777, #555, #333);
+  background: linear-gradient(var(--primary), #FFF,#FFF,#FFF);
 }
 .main-container {
   width: 100%;
@@ -31,7 +34,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(60, 60, 60);
+  background: #FFF;
   width: 100%;
   top: 0;
   height: 60px;
@@ -55,7 +58,6 @@ header {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.7);
   margin-right: 20px;
 }
 ul {
@@ -63,7 +65,7 @@ ul {
   list-style-type: none;
 }
 ul a {
-  color: #fff;
+  color: var(--primary);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1em;
@@ -117,17 +119,11 @@ form input {
   border: none;
   border-bottom: 1px solid white;
   outline-style: none;
-  color: white;
+  color: var(-primary);
   background: none;
   padding-left: 10px;
   font-size: 1.2em;
 }
-form input::placeholder {
-  color: rgba(255, 255, 255, 0.692);
-}
-form input::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.692);
-} /* MS Edge */
 #message {
   width: 100%;
   margin-top: 20px;
@@ -141,13 +137,14 @@ form input::-ms-input-placeholder {
   margin: 10px 0px;
   padding: 10px 0;
   font-size: 1.2em;
-  background: #000;
+  background: var(--primary);
+  color: #FFF;
   border: none;
   outline-style: none;
   cursor: pointer;
 }
 #submit-btn:hover {
-  background: #111;
+  background: rgb(2, 23, 248);
 }
 
 /* Footer */
@@ -155,8 +152,10 @@ form input::-ms-input-placeholder {
 footer {
   width: 100%;
   padding: 20px;
-  color: white;
   height: 65px;
-  background: black;
+  background: var(--primary);
   text-align: center;
+}
+footer p{
+  color: #FFF;
 }

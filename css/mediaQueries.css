@@ -48,7 +48,7 @@
 }
 @media (max-width: 669px) {
    #project-container {
-    height: 360px;
+    height: auto;
     min-width: 201px;
     padding: 0;
     overflow-x: hidden;
@@ -60,11 +60,16 @@
   .toolset-container {
     text-align: center;
   }
-  
+  #logo h1{
+    display: none;
+  }
 }
 @media (max-width: 415px) {
   .head-narrow {
     width: 95%;
+  }
+  #logo img:hover ~h1{
+    display: block;
   }
   #burger-box {
     display: block;
@@ -77,12 +82,15 @@
   #vertical-nav {
     position: relative;
     width: 100%;
-    background: black;
-    border-bottom: solid 1px rgb(96, 102, 105);
+    background: var(primary,rgb(5,71,162));
+    border-bottom: solid 1px rgb(175, 183, 187);
     text-align: center;
   }
   .nav-list {
     overflow: visible;
+  }
+  .nav-list a{
+    color: #FFF;
   }
   ul {
     display: block;

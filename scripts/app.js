@@ -25,15 +25,18 @@ const intervalTimer = () => {
         if (window.innerWidth < 670) {
           projectContainer.innerHTML = `
             <div class="design-box" id="design${projects[counter].id}">
-              <div class="image-container">
-                <a href=${projects[counter].url} rel="noopener noreferrer" target="_blank">
-                  <img src=${projects[counter].image} alt="app image" class="projectSRC" />
-                </a>
-              </div>
-              <div class="git-link">
-                <a href=${projects[counter].gitLink} rel="noopener noreferrer" target="_blank">
-                  <img src="/images/github.svg" alt="gitHub logo" />
-                </a>
+              <div class="phone-frame-box">
+                <img class="phone-frame" src="/images/iphone6-frame.png" alt="phone" />
+                <div class="image-container">
+                  <a href=${projects[counter].url} rel="noopener noreferrer" target="_blank">
+                    <img src=${projects[counter].image} alt="app image" class="projectSRC" />
+                  </a>
+                </div>
+                <div class="git-link">
+                  <a href=${projects[counter].gitLink} rel="noopener noreferrer" target="_blank">
+                    <img src="/images/github.svg" alt="gitHub logo" />
+                  </a>
+                </div>
               </div>
             </div>
             `;
@@ -51,15 +54,18 @@ timer.start();
 if (window.innerWidth < 670) {
   projectContainer.innerHTML += `
     <div class="design-box" id="design${projects[0].id}">
-      <div class="image-container">
-        <a href=${projects[0].url} rel="noopener noreferrer" target="_blank">
-          <img src=${projects[0].image} alt="app image" class="projectSRC" />
-        </a>
-      </div>
-      <div class="git-link">
-        <a href=${projects[0].gitLink} rel="noopener noreferrer" target="_blank">
-          <img src="/images/github.svg" alt="gitHub logo" />
-        </a>
+      <div class="phone-frame-box">
+        <img class="phone-frame" src="/images/iphone6-frame.png" alt="phone" />
+        <div class="image-container">
+          <a href=${projects[0].url} rel="noopener noreferrer" target="_blank">
+            <img src=${projects[0].image} alt="app image" class="projectSRC" />
+          </a>
+        </div>
+        <div class="git-link">
+          <a href=${projects[0].gitLink} rel="noopener noreferrer" target="_blank">
+            <img src="/images/github.svg" alt="gitHub logo" />
+          </a>
+        </div>
       </div>
     </div>
     `;
@@ -69,15 +75,18 @@ const projectFiller = () => {
   projects.forEach((box) => {
     projectContainer.innerHTML += `
       <div class="design-box" id="design${box.id}">
-        <div class="image-container">
-          <a href=${box.url} rel="noopener noreferrer" target="_blank">
-            <img src=${box.image} alt="app image" class="projectSRC" />
-          </a>
-        </div>
-        <div class="git-link">
-          <a href=${box.gitLink} rel="noopener noreferrer" target="_blank">
-            <img src="/images/github.svg" alt="gitHub logo" />
-          </a>
+        <div class="phone-frame-box">
+        <img class="phone-frame" src="/images/iphone6-frame.png" alt="phone" />
+          <div class="image-container">
+            <a href=${box.url} rel="noopener noreferrer" target="_blank">
+              <img src=${box.image} alt="app image" class="projectSRC" />
+            </a>
+          </div>
+          <div class="git-link">
+            <a href=${box.gitLink} rel="noopener noreferrer" target="_blank">
+              <img src="/images/github.svg" alt="gitHub logo" />
+            </a>
+          </div>
         </div>
       </div>
       `;
