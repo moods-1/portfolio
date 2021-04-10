@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Vollkorn&display=swap");
-:root{
+:root {
   --primary: #000;
   --shadow: 0px 0px 5px lightgray;
+  --glass: rgba(255, 255, 255, 0.2);
 }
 * {
   margin: 0;
@@ -21,7 +22,7 @@ body {
   margin: auto;
   padding: 0px;
   margin: 0px;
-  background: url('/images/black-squares.jpg') no-repeat;
+  background: url("/images/black-squares.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
 }
@@ -36,7 +37,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #FFF;
+  background: #fff;
   width: 100%;
   top: 0;
   height: 80px;
@@ -113,12 +114,12 @@ label {
   margin: auto;
   margin-bottom: 40px;
   padding: 30px;
-  background: rgba(255,255,255,0.1);
+  background: var(--glass, rgba(255, 255, 255, 0.2));
   backdrop-filter: blur(10px);
   border-radius: 5px;
   box-shadow: var(--shadow);
 }
-form{
+form {
   width: 320px;
   margin: auto;
   margin-top: 25px;
@@ -126,7 +127,7 @@ form{
   border-radius: 5px;
   box-shadow: var(--shadow);
   justify-content: flex-start;
-  background: #FFF;
+  background: #fff;
   font-size: 20px;
 }
 form input {
@@ -154,7 +155,7 @@ form input {
   padding: 10px 0;
   font-size: 1.1em;
   background: black;
-  color: #FFF;
+  color: #fff;
   border: none;
   outline-style: none;
   cursor: pointer;
@@ -172,6 +173,6 @@ footer {
   background: #000;
   text-align: center;
 }
-footer p{
-  color: #FFF;
+footer p {
+  color: #fff;
 }

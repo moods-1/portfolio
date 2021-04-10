@@ -20,7 +20,7 @@
   flex-wrap: wrap;
   width: 55%;
   height: auto;
-  background: rgba(255,255,255,0.1);
+  background: var(--glass,rgba(255,255,255,0.2));
   backdrop-filter: blur(10px);
   border-radius: 5px;
   margin-bottom: 40px;
