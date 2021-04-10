@@ -3,7 +3,6 @@
   min-height: 400px;
   height: auto;
   width: 100%;
-  padding-top: 50px;
   position: relative;
 }
 #showcase h1 {
@@ -34,11 +33,17 @@
   justify-items: center;
   align-items: center;
   height: auto;
-  margin: auto;
+  margin: 40px auto;
+  /* margin-bottom: 40px; */
   overflow: hidden;
   width: 55%;
   top: -500px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
   animation: startDrop 3500ms forwards;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
 }
 @keyframes startDrop {
   to {

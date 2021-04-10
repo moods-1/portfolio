@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="/css/mediaQueries.css" />
   </head>
   <body onresize="screenTracker()">
-    <div class="main-container">  
+    <div class="main-container">   
         <header>
           <div class="head-narrow">
             <div id="logo">
@@ -57,14 +57,11 @@
             </li>
           </ul>
         </div>
-        
         <!-- Design Section -->
         <div id="showcase"> 
           <div id="project-container"><!-- Dynamically rendered --></div>
         </div>
-  
         <!-- About and Skills -->
-  
         <div class="profile-container" id="about">
           <div class="toolset-container">
             <h1 class="section-title">Full Stack Web Developer</h1>
@@ -73,18 +70,17 @@
                 The MERN and MEVN stacks are the tools that I mainly use, but I am open to learning any required skills. MongoDB (Atlas and local) and MySQL are the databases used in those stacks. I have a desire to learn new ways to bring the imagined to reality with clean and efficient code.
               </p>
             </div>
-            <h1 class="section-title">Skills Barometer</h1>
+            <h1 class="section-title" id="skills-barometer" >Skills Barometer</h1>
             <div id="skills-box"><!-- Dynamically rendered --></div>
             </div>
             </div>
-          
         </div>
       </div>
       
       <!-- Contact -->
-      <div id="contact">
-        <h1 class="section-title" id="contact-title">Contact</h1>
+      <div id="contact"> 
         <div id="form-container">
+          <h1 class="section-title" id="contact-title">Contact</h1>
           <form id="contact-form" method="post" action="">
             <label for="name"></label>
             <input
@@ -117,9 +113,8 @@
             <button type="submit" id="submit-btn">SEND</button>
           </form>
         </div>
+      </div>    
     </div>
-    </div>
-
     <footer>
       <p>Moods Web Design, Copyright &copy; 2021</p>
     </footer>

@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Vollkorn&display=swap");
 :root{
-  --primary: rgb(5, 71, 162);
+  --primary: #000;
+  --shadow: 0px 0px 5px lightgray;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  color: var(--primary);
+  color: #fff;
   font-family: "Vollkorn", serif;
 }
 html {
@@ -20,8 +21,9 @@ body {
   margin: auto;
   padding: 0px;
   margin: 0px;
-  /* background: linear-gradient(var(--primary), #FFF,#FFF,#FFF); */
-  background: url('/images/blue-curve-fade.png') no-repeat;  
+  background: url('/images/black-squares.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 .main-container {
   width: 100%;
@@ -37,7 +39,7 @@ header {
   background: #FFF;
   width: 100%;
   top: 0;
-  height: 60px;
+  height: 80px;
   min-width: 320px;
   opacity: 0;
   z-index: 10;
@@ -46,7 +48,7 @@ header {
 .head-narrow {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   width: 55%;
 }
 #logo {
@@ -61,8 +63,10 @@ header {
   margin-right: 20px;
 }
 ul {
-  display: inline-flex;
+  display: flex;
   list-style-type: none;
+  height: 30px;
+  position: relative;
 }
 ul a {
   color: var(--primary);
@@ -70,9 +74,11 @@ ul a {
   text-transform: uppercase;
   font-size: 1em;
   margin-left: 10px;
+  border-bottom: 2px solid transparent;
+  transition: 250ms ease;
 }
 ul a:hover {
-  opacity: 0.8;
+  border-bottom: 2px solid red;
 }
 #burger-box {
   width: 20px;
@@ -91,7 +97,6 @@ ul a:hover {
 .d-none {
   display: none;
 }
-
 /* Contact */
 label {
   display: none;
@@ -100,19 +105,29 @@ label {
   position: relative;
   width: 100%;
   height: auto;
-  padding: 0px 15px 20px;
   text-align: center;
-  margin-top: -20px;
+  padding-top: 2px;
 }
 #form-container {
-  width: 320px;
-  min-width: 260px;
+  width: 55%;
   margin: auto;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+}
+form{
+  width: 320px;
+  margin: auto;
+  margin-top: 25px;
   border: 1px solid lightgray;
   border-radius: 5px;
-  box-shadow: 1px 1px 2px var(--primary);
+  box-shadow: var(--shadow);
   justify-content: flex-start;
   background: #FFF;
+  font-size: 20px;
 }
 form input {
   width: 100%;
@@ -120,33 +135,32 @@ form input {
   border: none;
   border-bottom: 1px solid lightgray;
   outline-style: none;
-  color: var(-primary);
   background: none;
   padding-left: 10px;
-  font-size: 1.2em;
+  color: #000;
+  font-size: 18px;
 }
 #message {
   width: 100%;
   margin-top: 20px;
   padding: 0 10px;
-  /* color: black; */
-  font-size: 1.2em;
   outline-style: none;
   border: none;
+  font-size: 18px;
 }
 #submit-btn {
   width: 100%;
   margin: 10px 0px;
   padding: 10px 0;
-  font-size: 1.2em;
-  background: var(--primary);
+  font-size: 1.1em;
+  background: black;
   color: #FFF;
   border: none;
   outline-style: none;
   cursor: pointer;
 }
 #submit-btn:hover {
-  background: rgb(2, 23, 248);
+  background: #111;
 }
 
 /* Footer */
@@ -155,7 +169,7 @@ footer {
   width: 100%;
   padding: 20px;
   height: 65px;
-  background: var(--primary);
+  background: #000;
   text-align: center;
 }
 footer p{
