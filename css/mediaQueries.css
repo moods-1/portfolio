@@ -1,13 +1,25 @@
 /* Media Queries */
 
-@media (max-width: 1650px) {
-  #project-container {
-    width: 55%;
+@media (min-width: 1921px) {
+  #circle1 {
+    top: 15%;
+    left: 45%;
   }
-}
-@media (max-width: 1350px) {
-  #project-container {
-    width: 55%;
+  #circle2 {
+    top: 25%;
+    left: 60%;
+  }
+  #circle3 {
+    top: 45%;
+    left: 50%;
+  }
+  #circle4 {
+    top: 65%;
+    left: 45%;
+  }
+  #circle5 {
+    top: 90%;
+    left: 60%;
   }
 }
 @media (max-width: 1024px) {
@@ -35,7 +47,7 @@
   #skills-box {
     width: 80%;
   }
-  #skills-box{
+  #skills-box {
     display: flex;
     justify-content: center;
   }
@@ -63,31 +75,36 @@
   #logo h1 {
     display: none;
   }
-  form{
-    width: 280px
+  form {
+    width: 280px;
   }
 }
-@media (max-width:560px){
-  #skills-barometer{
+@media (max-width: 560px) {
+  #skills-barometer {
     margin-bottom: 20px;
   }
-  #skills-box{
+  #skills-box {
     margin-top: 0px;
   }
-  .skill-box{
+  .skill-box {
     margin-right: 10px;
     margin-left: 10px;
   }
-  .section-title{
+  .section-title {
     transform: scale(0.8);
   }
-  #about-me{
+  #about-me {
     margin: 10px 0px;
   }
 }
 @media (max-width: 415px) {
+  header {
+    margin-top: 0px;
+  }
   .head-narrow {
-    width: 95%;
+    width: 100%;
+    border-radius: 0px;
+    box-shadow: none;
   }
   #logo img:hover ~ h1 {
     display: block;
@@ -112,8 +129,9 @@
     overflow: visible;
   }
   .nav-list a {
-    color: #fff;
-    border: none;
+    color: #000;
+    overflow: hidden;
+    font-size: 18px;
   }
   ul {
     display: block;
@@ -145,9 +163,17 @@
   }
   #contact,
   .toolset-container,
-  #project-container {
+  #form-container {
     width: 100%;
+    border-radius: 0px;
     box-shadow: none;
+    backdrop-filter: blur(20px);
+  }
+  #project-container{
+    width: 100%;
+  }
+  .toolset-container {
+    padding: 1px;
   }
   .section-title {
     margin: 0px;
@@ -160,14 +186,16 @@
     margin-left: 10px;
   }
   #about-me {
-    transform: scale(0.9);
+    font-size: 18px;
   }
   #form-container {
     width: 100%;
+    padding: 0px;
     justify-content: flex-start;
     box-shadow: none;
   }
-  form{
-    width: 260px;
+  form {
+    width: 80%;
+    font-size: 18px;
   }
 }

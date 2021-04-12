@@ -14,6 +14,7 @@ const skillsContainer = document.getElementById("skills-box");
 const contact = document.querySelector("#contact");
 const projectContainer = document.getElementById("project-container");
 const form = document.getElementById("contact-form");
+const skillProgress = document.querySelectorAll(".moods-progress-bar");
 let foodSource = "";
 let foodToggler = "";
 let counter = 0;
@@ -25,8 +26,7 @@ const intervalTimer = () => {
         if (window.innerWidth < 670) {
           projectContainer.innerHTML = `
             <div class="design-box" id="design${projects[counter].id}">
-              <div class="phone-frame-box">
-                <img class="phone-frame" src="/images/iphone6-frame.png" alt="phone" />
+              <div class="phone-frame-box">   
                 <div class="image-container">
                   <a href=${projects[counter].url} rel="noopener noreferrer" target="_blank">
                     <img src=${projects[counter].image} alt="app image" class="projectSRC" />
@@ -54,8 +54,7 @@ timer.start();
 if (window.innerWidth < 670) {
   projectContainer.innerHTML += `
     <div class="design-box" id="design${projects[0].id}">
-      <div class="phone-frame-box">
-        <img class="phone-frame" src="/images/iphone6-frame.png" alt="phone" />
+      <div class="phone-frame-box"> 
         <div class="image-container">
           <a href=${projects[0].url} rel="noopener noreferrer" target="_blank">
             <img src=${projects[0].image} alt="app image" class="projectSRC" />
@@ -75,8 +74,7 @@ const projectFiller = () => {
   projects.forEach((box) => {
     projectContainer.innerHTML += `
       <div class="design-box" id="design${box.id}">
-        <div class="phone-frame-box">
-        <img class="phone-frame" src="/images/iphone6-frame.png" alt="phone" />
+        <div class="phone-frame-box"> 
           <div class="image-container">
             <a href=${box.url} rel="noopener noreferrer" target="_blank">
               <img src=${box.image} alt="app image" class="projectSRC" />
@@ -96,7 +94,7 @@ const projectFiller = () => {
 skills.forEach((skill) => {
   skillsContainer.innerHTML += `
     <div class="skill-box">
-      <p><span>${skill.skill}</span></p>
+      <p>${skill.skill}</p>
       <img src=${skill.img} alt="${skill.skill}-icon">
       <div class="progress-container">
         <div class="moods-progress-bar" id=${skill.id}><span>${skill.percentage}</span></div>
@@ -116,7 +114,7 @@ else projectFiller();
 // 669px.
 
 screenTracker = () => {
-  if(window.innerWidth >= 415){
+  if (window.innerWidth >= 415) {
     verticalNav.classList.add("d-none");
     foodToggler === 1;
     foodImage.setAttribute("src", "/images/burger.png");
@@ -128,6 +126,30 @@ screenTracker = () => {
     }
   }
 };
+
+// Skill progress animation
+
+const skillAnimator = () =>{
+  const skillProgress = document.querySelectorAll(".moods-progress-bar");
+  skillProgress.forEach((x) => {
+    x.style.animation = "progressGrow 600ms ease forwards";
+  });
+}
+
+scrollTracker = () => {
+  const skillProgress = document.querySelectorAll(".moods-progress-bar");
+  if(window.innerHeight > 800){
+    (window.innerHeight - window.scrollY)  < 450 && skillAnimator();     
+  }
+  else if(window.innerHeight > 700 && window.innerHeight < 800){
+    (window.innerHeight - window.scrollY)  < 400 && skillAnimator();
+  }
+  else if(window.innerHeight < 700){
+    (window.innerHeight - window.scrollY)  < 300 && skillAnimator();
+  }
+};
+
+//
 
 burgerBox.addEventListener("click", () => {
   if (foodToggler === 0) {

@@ -1,37 +1,39 @@
 /* Skills */
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .profile-container {
   position: relative;
-  color: white;
   width: 100%;
   padding-top: 2px;
+  color: #FFF;
 }
 .about {
   margin: auto;
   padding-top: 20px;
   margin-bottom: 10px;
   text-align: center;
+  color:#FFF;;
   width: 100%;
 }
 .toolset-container {
+  color: #FFF;
   margin: auto;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
   width: 55%;
+  max-width: 945px;
   height: auto;
-  background: var(--glass,rgba(255,255,255,0.2));
+  background: none;
   backdrop-filter: blur(10px);
   border-radius: 5px;
   margin-bottom: 40px;
   box-shadow: var(--shadow);
-  padding: 30px 30px 10px 30px;;
-
+  padding: 30px 30px 10px 30px;
 }
 .profile {
   height: auto;
   width: 100%;
   text-align: left;
+  color: #FFF;
 }
 #profile-picture {
   width: 175px;
@@ -42,6 +44,7 @@
   width: 100%;
   text-align: center;
   text-transform: uppercase;
+  color: #FFF;
 }
 #about-me {
   text-align: left;
@@ -58,20 +61,21 @@
   border: 1px transparent solid;
   margin-top: 25px;
 }
-.skill-box{
+.skill-box {
   width: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0px 20px 20px 0px;
 }
-.skill-box img{
+.skill-box img {
   width: 60px;
-  height:  60px;
+  height: 60px;
   margin-bottom: 10px;
 }
 .skill-box p{
   margin-bottom: 7px;
+  color: #FFF;
 }
 .progress-container {
   width: 130px;
@@ -84,14 +88,34 @@
   font-size: 16px;
   text-align: center;
 }
-.moods-progress-bar span{
+.moods-progress-bar span {
   position: relative;
-  color: #FFF;
-  font-family: 'Times New Roman', Times, serif;
-  top: -1px;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+  top: -4px;
   left: 10%;
   z-index: 5;
   transform: translate(-50%, -50%);
+}
+@keyframes progressGrow {
+  from {
+    width: 0;
+  }
+}
+@-webkit-keyframes progressGrow {
+  from {
+    width: 0;
+  }
+}
+@-moz-keyframes progressGrow {
+  from {
+    width: 0;
+  }
+}
+@-o-keyframes progressGrow {
+  from {
+    width: 0;
+  }
 }
 #html-progress {
   width: 90%;
@@ -101,11 +125,11 @@
   width: 90%;
   background: rgb(21, 114, 182);
 }
-#js-progress{
+#js-progress {
   width: 85%;
   background: rgb(204, 174, 3);
 }
-#sql-progress{
+#sql-progress {
   width: 85%;
   background: rgb(4, 120, 133);
 }

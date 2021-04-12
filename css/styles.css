@@ -1,16 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Vollkorn&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 :root {
   --primary: #000;
-  --shadow: 0px 0px 5px lightgray;
-  --glass: rgba(255, 255, 255, 0.2);
+  --shadow: 3px 3px 10px rgba(255, 255, 255, 0.4);
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  color: #fff;
-  font-family: "Vollkorn", serif;
+  font-family: "Poppins", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -22,35 +20,38 @@ body {
   margin: auto;
   padding: 0px;
   margin: 0px;
-  background: url("/images/black-squares.jpg") no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: linear-gradient(to top right, #fff, rgb(163, 160, 160), #fff);
 }
 .main-container {
+  position: relative;
   width: 100%;
   margin: auto;
   min-height: calc(100vh - 65px);
   overflow-x: hidden;
 }
 /* Header */
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  width: 100%;
-  top: 0;
-  height: 80px;
-  min-width: 320px;
-  opacity: 0;
-  z-index: 10;
-  animation: headerFade 1.5s 3.5s forwards;
-}
 .head-narrow {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   width: 55%;
+  max-width: 945px;
+  height: 78px;
+  margin: auto;
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 0;
+  color: #fff;
+  z-index: 3;
+  animation: headerFade 1.5s 3.5s forwards;
+}
+@keyframes headerFade {
+  to {
+    opacity: 1;
+  }
 }
 #logo {
   display: flex;
@@ -70,7 +71,7 @@ ul {
   position: relative;
 }
 ul a {
-  color: var(--primary);
+  color: #000;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1em;
@@ -86,7 +87,7 @@ ul a:hover {
   height: 16px;
   cursor: pointer;
   margin-right: 5%;
-  overflow: hidden;
+  overflow: visible;
   transition: all 1s ease-in;
 }
 /* Slows the animation when triggered */
@@ -97,6 +98,54 @@ ul a:hover {
 }
 .d-none {
   display: none;
+}
+.circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, red, black);
+}
+#circle1 {
+  top: 15%;
+  left: 24%;
+  animation: clockwise 6500ms linear infinite;
+}
+#circle2 {
+  top: 25%;
+  left: 60%;
+  animation: counterclockwise 6500ms linear infinite;
+}
+#circle3 {
+  top: 45%;
+  left: 40%;
+  animation: clockwise 6500ms linear infinite;
+}
+#circle4 {
+  top: 65%;
+  left: 70%;
+  animation: counterclockwise 6500ms linear infinite;
+}
+#circle5 {
+  top: 90%;
+  left: 30%;
+  animation: clockwise 6500ms linear infinite;
+}
+@keyframes clockwise {
+  from {
+    transform: rotate(0deg) translateX(10px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+}
+@keyframes counterclockwise {
+  from {
+    transform: rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg) translateX(10px) rotate(0deg);
+  }
 }
 /* Contact */
 label {
@@ -111,11 +160,11 @@ label {
 }
 #form-container {
   width: 55%;
+  max-width: 945px;
   margin: auto;
   margin-bottom: 40px;
   padding: 30px;
-  background: var(--glass, rgba(255, 255, 255, 0.2));
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   border-radius: 5px;
   box-shadow: var(--shadow);
 }
