@@ -80,7 +80,7 @@ ul a {
   transition: 250ms ease;
 }
 ul a:hover {
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid rgb(169, 2, 2);
 }
 #burger-box {
   width: 20px;
@@ -203,14 +203,14 @@ form input {
   margin: 10px 0px;
   padding: 10px 0;
   font-size: 1.1em;
-  background: black;
+  background: rgb(125, 2, 2);
   color: #fff;
   border: none;
   outline-style: none;
   cursor: pointer;
 }
 #submit-btn:hover {
-  background: #111;
+  background: rgb(154, 2, 2);
 }
 
 /* Footer */
@@ -219,7 +219,7 @@ footer {
   width: 100%;
   padding: 20px;
   height: 65px;
-  background: #000;
+  background: rgb(125, 2, 2);
   text-align: center;
 }
 footer p {
