@@ -1,6 +1,6 @@
 const currentTitle = document.getElementsByTagName("title");
 const navListItems = Array.from(
-  document.querySelectorAll(".vertical-nav-list-item")
+    document.querySelectorAll(".vertical-nav-list-item")
 );
 const projectImage = document.querySelectorAll(".image-container");
 const sendButton = document.getElementById("submit-btn");
@@ -20,11 +20,11 @@ let foodToggler = "";
 let counter = 0;
 
 const intervalTimer = () => {
-  return {
-    start: () => {
-      mobileTimer = setInterval(() => {
-        if (window.innerWidth < 670) {
-          projectContainer.innerHTML = `
+    return {
+        start: () => {
+            mobileTimer = setInterval(() => {
+                if (window.innerWidth < 670) {
+                    projectContainer.innerHTML = `
             <div class="design-box" id="design${projects[counter].id}">
               <div class="phone-frame-box">   
                 <div class="image-container">
@@ -40,19 +40,19 @@ const intervalTimer = () => {
               </div>
             </div>
             `;
-          if (counter < projects.length) counter++;
-          if (counter == projects.length) counter = 0;
-        }
-      }, 2600);
-    },
-    stop: () => clearInterval(mobileTimer),
-  };
+                    if (counter < projects.length) counter++;
+                    if (counter == projects.length) counter = 0;
+                }
+            }, 2600);
+        },
+        stop: () => clearInterval(mobileTimer),
+    };
 };
 let timer = intervalTimer();
 timer.start();
 
 if (window.innerWidth < 670) {
-  projectContainer.innerHTML += `
+    projectContainer.innerHTML += `
     <div class="design-box" id="design${projects[0].id}">
       <div class="phone-frame-box"> 
         <div class="image-container">
@@ -69,10 +69,10 @@ if (window.innerWidth < 670) {
     </div>
     `;
 }
-
 const projectFiller = () => {
-  projects.forEach((box) => {
-    projectContainer.innerHTML += `
+    console.log("In project filler.");
+    projects.forEach((box) => {
+        projectContainer.innerHTML += `
       <div class="design-box" id="design${box.id}">
         <div class="phone-frame-box"> 
           <div class="image-container">
@@ -88,11 +88,11 @@ const projectFiller = () => {
         </div>
       </div>
       `;
-  });
+    });
 };
 
 skills.forEach((skill) => {
-  skillsContainer.innerHTML += `
+    skillsContainer.innerHTML += `
     <div class="skill-box">
       <p>${skill.skill}</p>
       <img src=${skill.img} alt="${skill.skill}-icon">
@@ -114,85 +114,83 @@ else projectFiller();
 // 669px.
 
 screenTracker = () => {
-  if (window.innerWidth >= 415) {
-    verticalNav.classList.add("d-none");
-    foodToggler === 1;
-    foodImage.setAttribute("src", "/images/burger.png");
-  }
-  if (window.innerWidth >= 670) {
-    if (projectContainer.childElementCount < 2) {
-      projectContainer.innerHTML = "";
-      projectFiller();
+    if (window.innerWidth >= 415) {
+        verticalNav.classList.add("d-none");
+        foodToggler === 1;
+        foodImage.setAttribute("src", "/images/burger.png");
     }
-  }
+    if (window.innerWidth >= 670) {
+        if (projectContainer.childElementCount < 2) {
+            projectContainer.innerHTML = "";
+            projectFiller();
+        }
+    }
 };
 
 // Skill progress animation
 
-const skillAnimator = () =>{
-  const skillProgress = document.querySelectorAll(".moods-progress-bar");
-  skillProgress.forEach((x) => {
-    x.style.animation = "progressGrow 600ms ease forwards";
-  });
+const skillAnimator = () => {
+    const skillProgress = document.querySelectorAll(".moods-progress-bar");
+    skillProgress.forEach((x) => {
+        x.style.animation = "progressGrow 600ms ease forwards";
+    });
 }
 
 scrollTracker = () => {
-  const skillProgress = document.querySelectorAll(".moods-progress-bar");
-  if(window.innerHeight > 800){
-    (window.innerHeight - window.scrollY)  < 450 && skillAnimator();     
-  }
-  else if(window.innerHeight > 700 && window.innerHeight < 800){
-    (window.innerHeight - window.scrollY)  < 400 && skillAnimator();
-  }
-  else if(window.innerHeight < 700){
-    (window.innerHeight - window.scrollY)  < 300 && skillAnimator();
-  }
+    const skillProgress = document.querySelectorAll(".moods-progress-bar");
+    if (window.innerHeight > 800) {
+        (window.innerHeight - window.scrollY) < 450 && skillAnimator();
+    } else if (window.innerHeight > 700 && window.innerHeight < 800) {
+        (window.innerHeight - window.scrollY) < 400 && skillAnimator();
+    } else if (window.innerHeight < 700) {
+        (window.innerHeight - window.scrollY) < 300 && skillAnimator();
+    }
 };
 
 //
 
 burgerBox.addEventListener("click", () => {
-  if (foodToggler === 0) {
-    navListItems.reverse().forEach((link, index) => {
-      link.style.animation = `navEaseOut 0.5s ease-in-out forwards ${
+    if (foodToggler === 0) {
+        navListItems.reverse().forEach((link, index) => {
+            link.style.animation = `navEaseOut 0.5s ease-in-out forwards ${
         index / 7
       }s`;
-    });
-    foodSource = "/images/burger.png";
-    setTimeout(() => {
-      foodToggler = 1;
-      verticalNav.classList.add("d-none");
-    }, 700);
-  } else {
-    foodSource = "/images/fries.png";
-    foodToggler = 0;
-    verticalNav.classList.remove("d-none");
-    navListItems.forEach(
-      (link, index) =>
-        (link.style.animation = `navEaseIn 0.5s ease-in-out forwards ${
+        });
+        foodSource = "/images/burger.png";
+        setTimeout(() => {
+            foodToggler = 1;
+            verticalNav.classList.add("d-none");
+        }, 700);
+    } else {
+        foodSource = "/images/fries.png";
+        foodToggler = 0;
+        verticalNav.classList.remove("d-none");
+        navListItems.forEach(
+            (link, index) =>
+            (link.style.animation = `navEaseIn 0.5s ease-in-out forwards ${
           index / 7 + 0.2
         }s`)
-    );
-  }
-  foodImage.setAttribute("src", foodSource);
+        );
+    }
+    foodImage.setAttribute("src", foodSource);
 });
 
 // Hide vertical nav on link click
 
 const handleLink = () => {
-  if (verticalNav.classList.contains("d-none")) {
-    verticalNav.classList.remove("d-none");
-    foodSource = "/images/fries.png";
-  } else {
-    verticalNav.classList.add("d-none");
-    foodSource = "/images/burger.png";
-  }
-  foodImage.setAttribute("src", foodSource);
+    if (verticalNav.classList.contains("d-none")) {
+        verticalNav.classList.remove("d-none");
+        foodSource = "/images/fries.png";
+    } else {
+        verticalNav.classList.add("d-none");
+        foodSource = "/images/burger.png";
+    }
+    foodImage.setAttribute("src", foodSource);
 };
 
 // Email
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  window.location.href = "/contact.php";
+    e.preventDefault();
+    window.location.href = "/contact.php";
 });
