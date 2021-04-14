@@ -1,4 +1,5 @@
 const currentTitle = document.getElementsByTagName("title");
+const mainContainer = document.querySelector('.main-container');
 const navListItems = Array.from(
   document.querySelectorAll(".vertical-nav-list-item")
 );
@@ -70,7 +71,6 @@ if (window.innerWidth < 670) {
     `;
 }
 const projectFiller = () => {
-  console.log("In project filler.");
   projects.forEach((box) => {
     projectContainer.innerHTML += `
       <div class="design-box" id="design${box.id}">
