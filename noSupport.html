@@ -8,15 +8,18 @@
     <style>
         body{
             width: 100%;
+            min-width: 320px;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .main-container{
+            position: relative;
             width: 500px;
             min-width: 320px;
-            height: 500px;
+            height: auto;
+            min-height: 500px;
             display: flex;
             -ms-flex-direction: column;
             flex-direction: column;
@@ -27,6 +30,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            width: 100%;
         }
         .browser-box{
             margin-right: 20px;
