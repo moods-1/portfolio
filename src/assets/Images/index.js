@@ -1,0 +1,17 @@
+export { default as Avatar } from "./cee-pc-blob.png";
+export { default as CSS } from "./css.png";
+export { default as HTML } from "./html.png";
+export { default as JavaScript } from "./javascript.png";
+export { default as ReactPic } from "./react.png";
+export { default as SASS } from "./sass.png";
+export { default as Vue } from "./vue.png";
+export { default as Node } from "./node.png";
+export { default as ReduxPic } from "./redux.png";
+export { default as Webflix } from "./webflixApp.jpg";
+export { default as Covid } from "./covidApp.png";
+export { default as Pizza } from "./pizzeriaApp.png";
+export { default as MUI } from "./mu5.png";
+export { default as MongoDB } from "./mongoDB.svg";
+export { default as GIT } from "./git-clear.png";
+export { default as JQuery } from "./jquery.png";
+export { default as Bootstrap } from "./bootstrap.png";

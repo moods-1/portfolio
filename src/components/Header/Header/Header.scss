@@ -1,0 +1,108 @@
+.header-main {
+  width: 100%;
+  height: auto;
+  background: #000;
+  position: fixed;
+  z-index: 10;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 769px) {
+    padding: 10px 30px 0px 5px;
+  }
+}
+.header-tabs-div {
+  width: 100%;
+  background: #111;
+}
+.header-nav {
+  width: auto;
+  display: flex;
+  a {
+    border-right: 1px solid #000;
+    padding: 5px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 35px;
+    font-size: 14px;
+    min-width: 120px;
+    text-decoration: none;
+    img {
+      width: 15px;
+      height: 15px;
+      margin-right: 2px;
+      margin-bottom: -3px;
+    }
+  }
+  @media (max-width: 769px) {
+    display: none;
+  }
+}
+.header-burger {
+  display: none;
+  @media (max-width: 769px) {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.header-nav-mobile {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background: url("../../../assets/Images/prism.png");
+  top: 0;
+  right: -100%;
+  border: 1px solid #555;
+  height: 100vh;
+  width: 180px;
+  padding-top: 80px;
+  z-index: 10;
+  a {
+    font-size: 18px;
+    margin-bottom: 35px;
+    text-decoration: none;
+    &:hover {
+      font-size: 19px;
+      color: var(--primary);
+    }
+  }
+  h3 {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+.slide {
+  animation: slide 750ms ease 0ms forwards;
+  @-moz-keyframes slide {
+    to {
+      right: 0;
+    }
+  }
+  @keyframes slide {
+    to {
+      right: 0;
+    }
+  }
+}
+.header-active-tab {
+  background: #000 !important;
+}
+.header-tree {
+  text-align: left;
+  font-size: 14px;
+  padding: 2px 0px 2px 10px;
+  img {
+    width: 13px;
+    height: 13px;
+    margin-right: 1px;
+    margin-bottom: -2px;
+  }
+}

@@ -1,0 +1,19 @@
+.footer-main{
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(17, 152, 248, 0.5);
+    color: #FFF;  
+}
+.footer-links{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 25px;
+        height: 25px;
+    }
+}

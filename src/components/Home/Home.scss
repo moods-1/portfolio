@@ -1,0 +1,43 @@
+.home-main {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 80px 15px 30px;
+  background: url("../../assets/Images/prism.png");
+  img {
+    width: 280px;
+  }
+  a {
+    text-decoration: none;
+  }
+  button {
+    margin: 30px 20px 30px 0px;
+    &:hover {
+      transform: translateY(-1px);
+      background: var(--primary);
+      box-shadow: 0px 0px 3px #fff;
+    }
+    @media (max-width: 300px) {
+      margin-top: 20px;
+      margin-bottom: 0px;
+    }
+  }
+  button:last-child {
+    margin-right: 0px;
+  }
+}
+.home-details {
+  h1 {
+    margin: -5px 0px;
+    font-size: 52px;
+    @media (max-width: 500px) {
+      font-size: 35px;
+    }
+  }
+}
