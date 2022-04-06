@@ -34,6 +34,10 @@ function About() {
             &nbsp;&nbsp;&nbsp;favoriteStack:&nbsp;
             <span className="about-me-value">MERN</span>;
           </p>
+          <p>
+            &nbsp;&nbsp;&nbsp;willingToLearn:&nbsp;
+            <span className="about-me-value">true</span>;
+          </p>
           <p>&#125;;</p>
           <br />
           <p>
