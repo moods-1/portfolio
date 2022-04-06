@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Modal, Typography, TextField, Button } from "@material-ui/core";
+import { Modal, TextField, Button } from "@material-ui/core";
 import { CheckCircleOutline } from "@material-ui/icons";
 import "./FormModal.scss";
 
