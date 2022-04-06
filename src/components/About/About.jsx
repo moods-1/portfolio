@@ -31,7 +31,7 @@ function About() {
             <span className="about-me-value">developer</span>;
           </p>
           <p>
-            &nbsp;&nbsp;&nbsp;stack:&nbsp;
+            &nbsp;&nbsp;&nbsp;favoriteStack:&nbsp;
             <span className="about-me-value">MERN</span>;
           </p>
           <p>&#125;;</p>
