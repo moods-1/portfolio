@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import { GIT } from "../../assets/Images";
+import { GIT } from "../../assets/images";
 
 function Footer() {
   return (

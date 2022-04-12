@@ -1,15 +1,14 @@
+@import "../../assets/scss/Main.scss";
+
 .home-main {
   width: 100%;
   height: auto;
   min-height: 100vh;
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  @include flex-mutable;
   text-align: left;
   padding: 80px 15px 30px;
-  background: url("../../assets/Images/prism.png");
+  background: url("../../assets/images/prism.png");
   img {
     width: 280px;
   }
@@ -20,7 +19,7 @@
     margin: 30px 20px 30px 0px;
     &:hover {
       transform: translateY(-1px);
-      background: var(--primary);
+      background: $primary;
       box-shadow: 0px 0px 3px #fff;
     }
     @media (max-width: 300px) {

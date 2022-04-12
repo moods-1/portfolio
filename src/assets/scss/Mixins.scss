@@ -1,0 +1,11 @@
+@mixin flex-mutable($items: center, $content: center, $wrap: wrap, $direction: row) {
+    display: flex;
+    align-items: $items;
+    justify-content: $content;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+@mixin grid-center{
+    display: grid;
+    place-items: center;
+}

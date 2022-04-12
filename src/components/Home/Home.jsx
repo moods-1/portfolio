@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Avatar } from "../../assets/Images";
+import { Avatar } from "../../assets/images";
 import "./Home.scss";
 import { Button } from "@material-ui/core";
 import { CloudDownloadOutlined } from "@material-ui/icons";

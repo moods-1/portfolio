@@ -13,7 +13,7 @@ import {
   MongoDB,
   JQuery,
   Bootstrap
-} from "../assets/Images";
+} from "../assets/images";
 export const projects = [
   {
     id: 1,

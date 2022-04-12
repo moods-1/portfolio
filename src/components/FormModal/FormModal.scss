@@ -1,3 +1,4 @@
+@import "../../assets/scss/Main.scss";
 .form-modal {
   position: absolute;
   top: 50%;
@@ -14,7 +15,7 @@
   h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: var(--primary);
+    color: $primary;
   }
   .MuiInputBase-formControl {
     margin-bottom: 15px;
@@ -24,7 +25,7 @@
     margin-top: 10px;
     &:hover {
       transform: translateY(-1px);
-      background: var(--primary);
+      background: $primary;
     }
   }
 }
@@ -32,12 +33,11 @@
   color: red;
 }
 .form-modal-success {
-  display: grid;
+  @include grid-center;
   padding: 40px 20px;
-  place-items: center;
   text-align: center;
   svg {
-    color: var(--success);
+    color: $success;
     font-size: 120px;
   }
 }

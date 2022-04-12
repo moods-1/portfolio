@@ -1,3 +1,5 @@
+@import "../../assets/scss/Main.scss";
+
 .about-main {
   width: 100%;
   height: auto;
@@ -18,10 +20,7 @@
 }
 .about-main-content {
   margin: 20px auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+  @include flex-mutable($content:space-around);
   @media (max-width: 900px) {
     width: 90%;
   }
@@ -38,7 +37,7 @@
   color: #fff;
   font-size: 14px;
   .about-me-export {
-    color: rgb(44, 167, 52);
+    color: $success;
     font-weight: 600;
   }
   .about-me-variable {
@@ -46,7 +45,7 @@
     font-weight: 600;
   }
   .about-me-value {
-    color: var(--primary);
+    color: $primary;
     font-weight: 600;
   }
 }

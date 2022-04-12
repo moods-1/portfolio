@@ -1,4 +1,4 @@
-export {default as Header} from "./Header/Header/Header";
+export {default as Header} from "./Header/Header";
 export {default as Home} from "./Home/Home";
 export {default as Work} from "./Work/Work";
 export {default as About} from "./About/About";
