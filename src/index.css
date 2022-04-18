@@ -11,14 +11,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('./assets/Images/prism.png');
+  background: url('./assets/images/prism.png');
   overflow-x: hidden;
 }
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 
 ::-webkit-scrollbar {
   width: 10px;

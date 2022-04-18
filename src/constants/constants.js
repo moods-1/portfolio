@@ -12,8 +12,8 @@ import {
   MUI,
   MongoDB,
   JQuery,
-  Bootstrap,
-} from "../assets/Images";
+  Bootstrap
+} from "../assets/images";
 export const projects = [
   {
     id: 1,

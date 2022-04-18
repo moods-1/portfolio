@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-import { linksObj } from "../../../constants/constants";
+import { linksObj } from "../../constants/constants";
 import { Menu } from "@material-ui/icons";
 import $ from "jquery";
 
