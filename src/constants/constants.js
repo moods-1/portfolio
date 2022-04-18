@@ -12,7 +12,7 @@ import {
   MUI,
   MongoDB,
   JQuery,
-  Bootstrap
+  Bootstrap,
 } from "../assets/Images";
 export const projects = [
   {
@@ -34,7 +34,7 @@ export const projects = [
     title: "Pizzeria",
     img: Pizza,
     description: "Pizzeria e-commerce site",
-    url: "https://trusting-chandrasekhar-9da4df.netlify.app",
+    url: "https://pizzeria-moodi.web.app",
   },
 ];
 
@@ -87,12 +87,12 @@ const name = {
 	firstName: Carl;
 	lastName: Moodie;
 }
-`
+`;
 export const linksObj = [
   {
     title: "Home",
     ext: ".html",
-    img: HTML
+    img: HTML,
   },
   {
     title: "About",
@@ -109,4 +109,4 @@ export const linksObj = [
   //   ext: ".scss",
   //   img: SASS,
   // },
-]
+];
