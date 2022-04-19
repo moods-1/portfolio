@@ -16,11 +16,11 @@ function About() {
           </p>
           <p>
             &nbsp;&nbsp;&nbsp;firstName:&nbsp;
-            <span className="about-me-value">Carl</span>;
+            <span className="about-me-value">"Carl"</span>;
           </p>
           <p>
             &nbsp;&nbsp;&nbsp;lastName:&nbsp;
-            <span className="about-me-value">Moodie</span>;
+            <span className="about-me-value">"Moodie"</span>;
           </p>
           <p>
             &nbsp;&nbsp;&nbsp;img:&nbsp;
@@ -28,11 +28,11 @@ function About() {
           </p>
           <p>
             &nbsp;&nbsp;&nbsp;profession:&nbsp;
-            <span className="about-me-value">developer</span>;
+            <span className="about-me-value">"developer"</span>;
           </p>
           <p>
             &nbsp;&nbsp;&nbsp;favoriteStack:&nbsp;
-            <span className="about-me-value">MERN</span>;
+            <span className="about-me-value">"MERN"</span>;
           </p>
           <p>
             &nbsp;&nbsp;&nbsp;willingToLearn:&nbsp;
