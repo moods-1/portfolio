@@ -25,7 +25,7 @@ function Home() {
             Hire me
           </Button>
           <a
-            href="https://drive.google.com/file/d/1ZEpnVhGdp1tAxD5iZ9WGMx32QddEeeFK/view?usp=sharing"
+            href="https://drive.google.com/file/d/1FMweVOQXkXZz1nYsNLvtqCW3XjGoBvT7/view?usp=sharing"
             rel="noopener noreferrer"
             target="_blank"
           >
