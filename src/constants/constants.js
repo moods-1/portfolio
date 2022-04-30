@@ -12,7 +12,7 @@ import {
   MUI,
   MongoDB,
   JQuery,
-  Bootstrap
+  Bootstrap,
 } from "../assets/images";
 export const projects = [
   {
@@ -110,3 +110,10 @@ export const linksObj = [
   //   img: SASS,
   // },
 ];
+
+export const pathObj = {
+  "/":0,
+  "/home": 0,
+  "/about": 1,
+  "/work": 2,
+};

@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Header.scss";
-import { linksObj } from "../../constants/constants";
+import { linksObj, pathObj } from "../../constants/constants";
 import { Menu } from "@material-ui/icons";
 import $ from "jquery";
 
 function Header({ props }) {
-  const [currentTab, setCurrentTab] = useState("Home");
+  const [currentTab, setCurrentTab] = useState("");
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const history = useHistory();
 
   const handleTree = useCallback((index) => {
     const { title, ext, img } = linksObj[index];
@@ -29,8 +30,28 @@ function Header({ props }) {
   });
 
   useEffect(() => {
-    handleTree(0);
-  }, [handleTree]);
+    const handleLoad = (path) => {
+      if (path in pathObj) {
+        let idx = pathObj[path];
+        handleTree(idx);
+        $(".header-nav a").each(function (index) {
+          if (idx === index) {
+            $(this).addClass("header-active-tab");
+          } else {
+            $(this).removeClass("header-active-tab");
+          }
+        });
+      }
+    };
+    if (history?.location?.pathname) {
+      let path = history.location.pathname;
+      handleLoad(path);
+    }
+    return history.listen((location) => {
+      let path = location.pathname;
+      handleLoad(path);
+    });
+  }, [history, handleTree]);
 
   return (
     <div className="header-main">
@@ -41,7 +62,6 @@ function Header({ props }) {
               to={`/${title.toLowerCase()}`}
               key={index}
               onClick={() => handleLink(index, false, title)}
-              className={index === 0 ? "header-active-tab" : ""}
             >
               <img src={img} alt="title" /> {`${title}${ext}`}
             </Link>
