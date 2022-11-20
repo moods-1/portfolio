@@ -4,6 +4,7 @@ import "./Home.scss";
 import { Button } from "@material-ui/core";
 import { CloudDownloadOutlined } from "@material-ui/icons";
 import { FormModal } from "../../components";
+
 function Home() {
   const [openFormModal, setOpenFormModal] = useState(false);
   const closeFormModal = () => setOpenFormModal(!openFormModal);

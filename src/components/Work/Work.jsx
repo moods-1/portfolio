@@ -5,7 +5,7 @@ import {
   CardMedia,
   Typography,
 } from "@material-ui/core";
-import { projects } from "../../constants/constants";
+import { PROJECTS } from "../../constants/constants";
 import "./Work.scss";
 
 function Work() {
@@ -13,7 +13,7 @@ function Work() {
     <div className="work-main" id="workComp">
       <h1>Construction Zone</h1>
       <div className="work-main-details">
-        {projects.map(({ id, title, img, description, url }) => (
+        {PROJECTS.map(({ id, title, img, description, url }) => (
           <Card className="work-card" key={id}>
             <CardContent>
               <CardMedia>
