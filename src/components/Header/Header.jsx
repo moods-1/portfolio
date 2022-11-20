@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import './Header.scss';
 import { LINKS, PATHS } from '../../constants/constants';
 import { Menu } from '@material-ui/icons';
@@ -58,13 +58,13 @@ function Header({ props }) {
 			<div className='header-tabs-div'>
 				<div className='header-nav'>
 					{LINKS.map(({ title, ext, img }, index) => (
-						<Link
+						<NavLink
 							to={`/${title.toLowerCase()}`}
 							key={index}
 							onClick={() => handleLink(index, false, title)}
 						>
 							<img src={img} alt='title' /> {`${title}${ext}`}
-						</Link>
+						</NavLink>
 					))}
 				</div>
 			</div>
@@ -73,13 +73,13 @@ function Header({ props }) {
 				{showMobileMenu && (
 					<div className='header-nav-mobile slide'>
 						{LINKS.map(({ title }, index) => (
-							<Link
+							<NavLink
 								to={`/${title.toLowerCase()}`}
 								key={index}
 								onClick={(e) => handleLink(index, true)}
 							>
 								{title}
-							</Link>
+							</NavLink>
 						))}
 						<h3 onClick={() => setShowMobileMenu(!showMobileMenu)}>X</h3>
 					</div>
