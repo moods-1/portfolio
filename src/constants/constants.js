@@ -58,14 +58,20 @@ export const SKILLS = [
 		img: Bootstrap,
 		skill: 'Bootstrap',
 		color: 'rgba(85, 60, 123,0.5)',
+		level: '90%',
+	},
+	{
+		img: MUI,
+		skill: 'Material-UI',
+		color: 'rgba(30,144,255,0.2)',
 		level: '85%',
 	},
 	{ img: Node, skill: 'Node JS', color: 'rgba(50,205,50,0.2)', level: '80%' },
 	{ img: Vue, skill: 'Vue', color: 'rgba(50,205,50,0.2)', level: '80%' },
 	{ img: SASS, skill: 'SASS', color: 'rgba(255,192,203,0.4)', level: '80%' },
 	{
-		img: MUI,
-		skill: 'Material-UI',
+		img: JQuery,
+		skill: 'JQuery',
 		color: 'rgba(30,144,255,0.2)',
 		level: '75%',
 	},
@@ -73,13 +79,7 @@ export const SKILLS = [
 		img: MongoDB,
 		skill: 'MongoDB',
 		color: 'rgba(50,205,50,0.2)',
-		level: '75%',
-	},
-	{
-		img: JQuery,
-		skill: 'JQuery',
-		color: 'rgba(30,144,255,0.2)',
-		level: '75%',
+		level: '70%',
 	},
 ];
 
