@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import './Header.scss';
-import { LINKS, PATHS } from '../../constants/constants';
+import { LINKS, PATHS } from '../../helpers/constants';
 import { Menu } from '@material-ui/icons';
 import $ from 'jquery';
 

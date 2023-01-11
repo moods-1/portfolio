@@ -15,3 +15,4 @@ export { default as MongoDB } from "./mongoDB.svg";
 export { default as GIT } from "./git-clear.png";
 export { default as JQuery } from "./jquery.png";
 export { default as Bootstrap } from "./bootstrap.png";
+export { default as Dashboard } from "./dashboardApp.png";

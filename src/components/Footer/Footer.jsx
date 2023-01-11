@@ -5,7 +5,7 @@ import { GIT } from "../../assets/images";
 function Footer() {
   return (
     <div className="footer-main" id="footerComp">
-      <p>&copy;&nbsp;Carl Moodie 2022</p>
+      <p>&copy;&nbsp;Carl Moodie 2023</p>
       <div className="footer-links">
         <a
           href="https://github.com/moods-1"

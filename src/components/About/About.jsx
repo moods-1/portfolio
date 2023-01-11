@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.scss';
-import { SKILLS } from '../../constants/constants';
+import { SKILLS } from '../../helpers/constants';
 
 function About() {
 	return (
