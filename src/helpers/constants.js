@@ -28,7 +28,7 @@ export const PROJECTS = [
 		id: 2,
 		title: 'Dashboard',
 		img: Dashboard,
-		description: 'Task management dashboard',
+		description: 'Fluid task management',
 		url: 'https://task-dashboard.web.app',
 	},
 	{
