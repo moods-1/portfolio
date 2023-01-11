@@ -19,7 +19,7 @@ import {
 export const PROJECTS = [
 	{
 		id: 1,
-		title: 'Webflixx',
+		title: 'Webflix',
 		img: Webflix,
 		description: 'Netflix influenced app',
 		url: 'https://webbflixx.web.app',

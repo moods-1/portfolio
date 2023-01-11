@@ -82,7 +82,7 @@ function FormModal({ openFormModal, closeFormModal }) {
           onChange={(e) => setMessage(e.target.value)}
         />
         {errorMessage && <p className="form-modal-error">{errorMessage}</p>}
-        <Button disabled={sending} type="submit" variant="contained" color="primary" fullWidth>
+        <Button size="small" disabled={sending} type="submit" variant="contained" color="primary" fullWidth>
           Send Message
         </Button>
       </form>
