@@ -127,3 +127,5 @@ export const PATHS = {
 	'/about': 1,
 	'/work': 2,
 };
+
+export const MIXPANEL_TOKEN = process.env.REACT_APP_MIXPANEL_TOKEN;
