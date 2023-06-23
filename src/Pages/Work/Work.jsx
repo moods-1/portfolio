@@ -1,9 +1,11 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { PROJECTS } from '../../helpers/constants';
+import { Mixpanel } from '../../components/Mixpanel';
 import './Work.scss';
 
 function Work() {
+	Mixpanel.track('Work page accessed', { action: 'Work page accessed.' });
 	return (
 		<div className='work-main' id='workComp'>
 			<h1>Construction Zone</h1>

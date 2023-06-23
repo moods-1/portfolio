@@ -6,7 +6,7 @@ import { theme } from './themes/theme';
 import { Mixpanel } from './components/Mixpanel';
 
 function App() {
-	Mixpanel.track('Site accessed', { action: 'Site accessed.' });
+	Mixpanel.track('Home page accessed', { action: 'Home page accessed.' });
 	return (
 		<ThemeProvider theme={theme}>
 			<div className='App'>
