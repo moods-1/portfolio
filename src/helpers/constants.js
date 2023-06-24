@@ -85,10 +85,10 @@ export const SKILLS = [
 	{ img: SASS, skill: 'SASS', color: 'rgba(255,192,203,0.4)', level: '80%' },
 	{
 		img: JQuery,
-		skill: 'JQuery',
+		skill: 'jQuery',
 		color: 'rgba(30,144,255,0.2)',
 		level: '75%',
-	},	
+	},
 ];
 
 export const ABOUT = `
