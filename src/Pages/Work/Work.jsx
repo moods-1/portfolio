@@ -8,7 +8,11 @@ function Work() {
 	Mixpanel.track('Work page accessed', { action: 'Work page accessed.' });
 	return (
 		<div className='work-main' id='workComp'>
-			<h1>Construction Zone</h1>
+			<div className='title-box'>
+				<h1>Construction Zone</h1>
+				<p>{`~ Select a project ~`}</p>
+			</div>
+
 			<div className='work-main-details'>
 				{PROJECTS.map(({ id, title, img, description, url }) => (
 					<Card className='work-card' key={id}>

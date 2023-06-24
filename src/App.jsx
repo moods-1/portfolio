@@ -1,5 +1,5 @@
 import './App.scss';
-import { Home, About, Work, Header, Footer } from './components';
+import { Home, About, Work, Header } from './components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core';
 import { theme } from './themes/theme';
@@ -17,7 +17,7 @@ function App() {
 						<Route path='/about' component={About} />
 						<Route path='/work' component={Work} />
 					</Switch>
-					<Footer />
+					{/* <Footer /> */}
 				</Router>
 			</div>
 		</ThemeProvider>

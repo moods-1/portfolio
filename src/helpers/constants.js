@@ -75,6 +75,12 @@ export const SKILLS = [
 		level: '85%',
 	},
 	{ img: Node, skill: 'Node JS', color: 'rgba(50,205,50,0.2)', level: '80%' },
+	{
+		img: MongoDB,
+		skill: 'MongoDB',
+		color: 'rgba(50,205,50,0.2)',
+		level: '80%',
+	},
 	{ img: Vue, skill: 'Vue', color: 'rgba(50,205,50,0.2)', level: '80%' },
 	{ img: SASS, skill: 'SASS', color: 'rgba(255,192,203,0.4)', level: '80%' },
 	{
@@ -82,13 +88,7 @@ export const SKILLS = [
 		skill: 'JQuery',
 		color: 'rgba(30,144,255,0.2)',
 		level: '75%',
-	},
-	{
-		img: MongoDB,
-		skill: 'MongoDB',
-		color: 'rgba(50,205,50,0.2)',
-		level: '70%',
-	},
+	},	
 ];
 
 export const ABOUT = `
@@ -129,3 +129,12 @@ export const PATHS = {
 };
 
 export const MIXPANEL_TOKEN = process.env.REACT_APP_MIXPANEL_TOKEN;
+
+export const ABOUT_DETAILS = {
+	firstName: "'Carl'",
+	lastName: "'Moodie'",
+	img: "'/images/carl.png'",
+	profession: "'developer'",
+	favoriteStack: "'MERN'",
+	willingToLearn: 'true',
+};
