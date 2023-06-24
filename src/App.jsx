@@ -10,15 +10,17 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<div className='App'>
-				<Router>
-					<Header />
-					<Switch>
-						<Route path={['/', '/home']} exact component={Home} />
-						<Route path='/about' component={About} />
-						<Route path='/work' component={Work} />
-					</Switch>
-					{/* <Footer /> */}
-				</Router>
+				<div className='App-content'>
+					<Router>
+						<Header />
+						<Switch>
+							<Route path={['/', '/home']} exact component={Home} />
+							<Route path='/about' component={About} />
+							<Route path='/work' component={Work} />
+						</Switch>
+						{/* <Footer /> */}
+					</Router>
+				</div>
 			</div>
 		</ThemeProvider>
 	);

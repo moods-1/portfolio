@@ -7,6 +7,7 @@ import $ from 'jquery';
 
 function Header({ props }) {
 	const [currentTab, setCurrentTab] = useState('');
+	const [selectedTab, setSelectedTab] = useState(0);
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 	const history = useHistory();
 
@@ -21,13 +22,9 @@ function Header({ props }) {
 
 	const handleLink = (index, mobile) => {
 		(index || index === 0) && handleTree(index);
+		setSelectedTab(index);
 		mobile && setShowMobileMenu(false);
 	};
-
-	$('.header-nav a').on('click', function () {
-		$(this).addClass('header-active-tab');
-		$(this).siblings().removeClass('header-active-tab');
-	});
 
 	useEffect(() => {
 		const handleLoad = (path) => {
@@ -62,6 +59,7 @@ function Header({ props }) {
 							to={`/${title.toLowerCase()}`}
 							key={index}
 							onClick={() => handleLink(index, false, title)}
+							className={selectedTab === index?'header-active-tab':''}
 						>
 							<img src={img} alt='title' /> {`${title}${ext}`}
 						</NavLink>
