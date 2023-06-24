@@ -3,7 +3,6 @@ import { NavLink, useHistory } from 'react-router-dom';
 import './Header.scss';
 import { LINKS, PATHS } from '../../helpers/constants';
 import { Menu } from '@material-ui/icons';
-import $ from 'jquery';
 
 function Header({ props }) {
 	const [currentTab, setCurrentTab] = useState('');
@@ -31,13 +30,7 @@ function Header({ props }) {
 			if (path in PATHS) {
 				let idx = PATHS[path];
 				handleTree(idx);
-				$('.header-nav a').each(function (index) {
-					if (idx === index) {
-						$(this).addClass('header-active-tab');
-					} else {
-						$(this).removeClass('header-active-tab');
-					}
-				});
+				setSelectedTab(idx);
 			}
 		};
 		if (history?.location?.pathname) {
@@ -59,7 +52,7 @@ function Header({ props }) {
 							to={`/${title.toLowerCase()}`}
 							key={index}
 							onClick={() => handleLink(index, false, title)}
-							className={selectedTab === index?'header-active-tab':''}
+							className={selectedTab === index ? 'header-active-tab' : ''}
 						>
 							<img src={img} alt='title' /> {`${title}${ext}`}
 						</NavLink>
