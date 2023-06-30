@@ -23,7 +23,7 @@ function Home() {
 							About Me
 						</Button>
 					</NavLink>
-					<NavLink to='/work'>
+					<NavLink to='/projects'>
 						<Button variant='contained' color='primary'>
 							My Projects
 						</Button>

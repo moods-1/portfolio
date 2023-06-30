@@ -110,7 +110,7 @@ export const LINKS = [
 		img: ReactPic,
 	},
 	{
-		title: 'Work',
+		title: 'Projects',
 		ext: '.js',
 		img: JavaScript,
 	},
@@ -125,7 +125,7 @@ export const PATHS = {
 	'/': 0,
 	'/home': 0,
 	'/about': 1,
-	'/work': 2,
+	'/projects': 2,
 };
 
 export const MIXPANEL_TOKEN = process.env.REACT_APP_MIXPANEL_TOKEN;
