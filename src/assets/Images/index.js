@@ -16,3 +16,4 @@ export { default as GIT } from "./git-clear.png";
 export { default as JQuery } from "./jquery.png";
 export { default as Bootstrap } from "./bootstrap.png";
 export { default as Dashboard } from "./dashboardApp.png";
+export { default as Rotating3D} from './3D-icon.gif';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Avatar } from '../../assets/images';
+import { Avatar, Rotating3D } from '../../assets/images';
 import './Home.scss';
 import { Button } from '@material-ui/core';
 import { FormModal } from '../../components';
@@ -17,7 +17,7 @@ function Home() {
 					<h1>WEB DEVELOPER!</h1>
 					<h4>Well, it just so happens ...</h4>
 				</div>
-				<div>
+				<div className='home-personal-buttons'>
 					<NavLink to='/about'>
 						<Button variant='contained' color='primary'>
 							About Me
@@ -29,13 +29,16 @@ function Home() {
 						</Button>
 					</NavLink>
 				</div>
-				<div className="portfolio-3d">
+				<div className='portfolio-3d'>
 					<a
 						href=' https://carl-3d-portfolio.web.app'
 						target='_blank'
 						rel='noreferrer'
 					>
-						3D Portfolio Site *
+						<Button>
+							<div style={{ backgroundImage: `url(${Rotating3D})` }} />
+							3D Portfolio Site *
+						</Button>
 					</a>
 					<p>* Recommended for desktops</p>
 				</div>
