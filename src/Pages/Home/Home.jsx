@@ -29,6 +29,16 @@ function Home() {
 						</Button>
 					</NavLink>
 				</div>
+				<div className="portfolio-3d">
+					<a
+						href=' https://carl-3d-portfolio.web.app'
+						target='_blank'
+						rel='noreferrer'
+					>
+						3D Portfolio Site *
+					</a>
+					<p>* Recommended for desktops</p>
+				</div>
 			</div>
 			<div>
 				<img src={Avatar} alt='carl' />
